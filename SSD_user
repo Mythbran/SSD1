@@ -1,0 +1,8 @@
+CREATE TABLE userTable(
+name text NOT NULL,
+email text NOT NULL,
+address text NOT NULL,
+pNumber text NOT NULL,
+bio text NOT NULL,
+PRIMARY KEY (email, pNumber)
+);
