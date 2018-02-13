@@ -5092,7 +5092,6 @@ a.list-group-item-danger.active:focus {
   border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  position: fixed;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {

@@ -89,7 +89,7 @@
 	<?php 
 	
 	echo "<h1>Enter Your User Information</h1>";
-	echo "<form form name= 'newUser' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>";
+	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
 	echo "First Name: <input type ='text' id='fName'>";
 	echo "<br>";
 	echo "<br>";
