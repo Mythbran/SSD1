@@ -107,7 +107,7 @@
 		<option value='0'>--Select--</option>
 		<option value='Ontario'>Ontario</option>
 		<option value='Quebec'>Quebec</option>
-		</select>"
+		</select>";
 	echo "<br>";
 	echo "<br>";	
 	echo "&nbsp;&nbsp;Postal Code: <input type = 'text' id='pCode'>";
