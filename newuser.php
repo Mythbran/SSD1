@@ -103,7 +103,7 @@
 	echo "<br>";
 	echo "<br>";
 	echo "&nbsp;&nbsp;City: <input type = 'text' id='city'>";
-	echo "Province: <select name='province' id='province'>
+	echo "&nbsp;&nbsp;Province: <select name='province' id='province'>
 		<option value='0'>--Select--</option>
 		<option value='Ontario'>Ontario</option>
 		<option value='Quebec'>Quebec</option>
