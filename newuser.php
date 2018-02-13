@@ -90,13 +90,15 @@
 	
 	echo "<h1>Enter Your User Information</h1>";
 	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
+	echo "<br>";
+	echo "<br>";
 	echo "Username: <input type = 'text' id='uName'>";
 	# uName validation = ereg("[A-Za-z]{1,25}")
 	echo "Email Address: <input type = 'email' id='email'>";
 	#Validation for email = ereg("[A-Za-z0-9\.\-]{1,64}+@[A-Za-z0-9\-]{1,188}+\.[A-Za-z\.]{1,9}")
 	echo "<br>";
 	echo "<br>";
-	echo "Street Number: <input type = 'number' id='sNum'>";
+	echo "Street Number: <input type = 'text' id='sNum'>";
 	echo "Street Name: <input type = 'text' id='sName'>";
 	echo "<br>";
 	echo "<br>";
