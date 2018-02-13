@@ -1,4 +1,4 @@
-1# Apache Server Configs v2.11.0 | MIT License
+# Apache Server Configs v2.11.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
 # (!) Using `.htaccess` files slows down Apache, therefore, if you have
@@ -34,14 +34,14 @@
 # https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
 # https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
 
-#<IfModule mod_setenvif.c>
-#    <IfModule mod_headers.c>
-#        <FilesMatch "\.(bmp|cur|gif|ico|jpe?g|png|svgz?|webp)$">
-#            SetEnvIf Origin ":" IS_CORS
-#            Header set Access-Control-Allow-Origin "*" env=IS_CORS
-#        </FilesMatch>
-#    </IfModule>
-#</IfModule>
+<IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+        <FilesMatch "\.(bmp|cur|gif|ico|jpe?g|png|svgz?|webp)$">
+            SetEnvIf Origin ":" IS_CORS
+            Header set Access-Control-Allow-Origin "*" env=IS_CORS
+        </FilesMatch>
+    </IfModule>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Cross-origin web fonts                                             |
@@ -362,11 +362,11 @@ AddDefaultCharset utf-8
 # Redirect from the `http://` to the `https://` version of the URL.
 # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
 
- <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
- </IfModule>
+# <IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteCond %{HTTPS} !=on
+#    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | Suppressing / Forcing the `www.` at the beginning of URLs          |
@@ -585,9 +585,9 @@ AddDefaultCharset utf-8
 # https://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
 # http://blogs.msdn.com/b/ieinternals/archive/2014/08/18/hsts-strict-transport-security-attacks-mitigations-deployment-https.aspx
 
-<IfModule mod_headers.c>
-    Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
-</IfModule>
+# <IfModule mod_headers.c>
+#     Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | Reducing MIME type security risks                                  |
@@ -645,16 +645,16 @@ AddDefaultCharset utf-8
 # http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx
 # https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
 
-<IfModule mod_headers.c>
+# <IfModule mod_headers.c>
 #     #                           (1)    (2)
-    Header set X-XSS-Protection "1; mode=block"
+#     Header set X-XSS-Protection "1; mode=block"
 #     # `mod_headers` cannot match based on the content-type, however,
 #     # the `X-XSS-Protection` response header should be send only for
 #     # HTML documents and not for the other resources.
-    <FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|woff2?|xloc|xml|xpi)$">
-         Header unset X-XSS-Protection
-     </FilesMatch>
- </IfModule>
+#     <FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|woff2?|xloc|xml|xpi)$">
+#         Header unset X-XSS-Protection
+#     </FilesMatch>
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | Server software information                                        |
