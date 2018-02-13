@@ -88,36 +88,36 @@
 
 	<?php 
 	
-	echo "<h1>Enter Your User Information</h1>";
+	echo "&nbsp;&nbsp;<h1>Enter Your User Information</h1>";
 	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
 	echo "<br>";
 	echo "<br>";
 	echo "&nbsp;&nbsp; Username: <input type = 'text' id='uName'>";
 	# uName validation = ereg("[A-Za-z]{1,25}")
-	echo "Email Address: <input type = 'email' id='email'>";
+	echo "&nbsp;&nbsp;Email Address: <input type = 'email' id='email'>";
 	#Validation for email = ereg("[A-Za-z0-9\.\-]{1,64}+@[A-Za-z0-9\-]{1,188}+\.[A-Za-z\.]{1,9}")
 	echo "<br>";
 	echo "<br>";
-	echo "Street Number: <input type = 'text' id='sNum'>";
-	echo "Street Name: <input type = 'text' id='sName'>";
+	echo "&nbsp;&nbsp;Street Number: <input type = 'text' id='sNum'>";
+	echo "&nbsp;&nbsp;Street Name: <input type = 'text' id='sName'>";
 	echo "<br>";
 	echo "<br>";
-	echo "City: <input type = 'text' id='city'>";
+	echo "&nbsp;&nbsp;City: <input type = 'text' id='city'>";
 	#echo "Province: <select name="province">
 	#	<option value='Quebec'> Quebec </option>
 	#	<option value='Ontario'> Ontario </option>";
 	echo "<br>";
 	echo "<br>";	
-	echo "Postal Code: <input type = 'text' id='pCode'>";
-	echo "Phone Number: <input type = 'tel' id='pNum'>";
+	echo "&nbsp;&nbsp;Postal Code: <input type = 'text' id='pCode'>";
+	echo "&nbsp;&nbsp;Phone Number: <input type = 'tel' id='pNum'>";
 	#pNum validation = ereg ("\(?[0-9]{3}[\.\-\)]?[0-9]{3}[\.\-]?[0-9]{4}
 	echo "<br>";
 	echo "<br>";
-	echo "Bio: <textarea name='bio' rows='5' cols='40'></textarea>";
+	echo "&nbsp;&nbsp;Bio: <textarea name='bio' rows='5' cols='40'></textarea>";
 	echo "<br>";
 	echo "<br>";
-	echo "<input type='submit' name='submit' value='Submit'>";
-	echo "\t<input type='reset' name='reset' value='Reset'>";
+	echo "&nbsp;&nbsp;<input type='submit' name='submit' value='Submit'>";
+	echo "&nbsp;&nbsp;<input type='reset' name='reset' value='Reset'>";
 	echo "</form>";
 	
 	?>
