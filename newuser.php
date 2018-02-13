@@ -1,26 +1,26 @@
 <!-- **************************************** *
- * New User webpage on demo site 	      *
- * developed by Matthew D'Angelo 	      *
+ * New User webpage on demo site 	      	  *
+ * developed by Matthew D'Angelo 	          *
  * This is where someone will make a new user *
  * Users will enter uname, email, fAddr, pNum *
  * and bio All stripped for excess whitespace * 
- * Regex is used			      *
+ * Regex is used			                  *
  *  - uName most be composed of alphabetic    *
  *  - email is form username@domain.tld	      * 
  *  - username can contain alphanumeric dots  * 
  *       & Dashes. Domain must only contain   * 
- *      alphanumeric and dashes 	      * 
+ *      alphanumeric and dashes 	          * 
  *      tld must contain characters and dots  * 
  *  - Phone number must be a NA # with format * 
- *      1234567890, 123.456.7890, 	      *  
+ *      1234567890, 123.456.7890, 	          *  
  *      123-456-7890(123) 456-7890. 10 # long * 
  *  - Postal code must be canadian style      * 
- *      A1B 2C3 & A1B2C3 		      * 
+ *      A1B 2C3 & A1B2C3 		              * 
  * Using other validation techiques 	      * 
  *  - bio fields must be stripped of code     * 
- *	HTML CSS JS special characters        * 
+ *	HTML CSS JS special characters            * 
  *  - bio field stripped of SQL keywords      * 
- *	INSERT UPDATE DELETE		      * 
+ *	INSERT UPDATE DELETE		              * 
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
@@ -90,7 +90,7 @@
 	
 	echo "<h1>Enter Your User Information</h1>";
 	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
-	echo "First Name: <input type ='text' id='fName'>";
+	echo "First Name: <input type ='text' id='$fName'>";
 	echo "<br>";
 	echo "<br>";
 	echo "Last Name: <input type = 'text' id='lName'>";
@@ -99,7 +99,11 @@
 	echo "Username: <input type = 'text' id='uName'>";
 	echo "<br>";
 	echo "<br>";
-	echo "Email Address: <input type = 'email' id='email'>";
+	echo "Email Address: <input type = 'email' id='$email'>";
+	$eVal = ereg("^.+@.+\..+", $email);
+	if($eVal)
+		{ echo("yes");}
+	else {echo("no");}
 	echo "<br>";
 	echo "<br>";
 	echo "Full Address: <input type = 'tel' id='pNum'>";
@@ -113,6 +117,9 @@
 	echo "</form>";
 	
 	?>
+
+	
+
 
 
 	
