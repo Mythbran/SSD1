@@ -87,7 +87,7 @@
     </div>
 
 	<?php 
-	
+	print _r($_POST);
 	echo "&nbsp;&nbsp;<h1>Enter Your User Information</h1>";
 	echo "<form form name= 'newUser' action='test.html' method='post'";
 	echo "<br>";
