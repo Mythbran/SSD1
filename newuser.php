@@ -92,7 +92,7 @@
 	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
 	echo "<br>";
 	echo "<br>";
-	echo "str_repeat('&nbsp;', 5) Username: <input type = 'text' id='uName'>";
+	echo "&nbsp;&nbsp; Username: <input type = 'text' id='uName'>";
 	# uName validation = ereg("[A-Za-z]{1,25}")
 	echo "Email Address: <input type = 'email' id='email'>";
 	#Validation for email = ereg("[A-Za-z0-9\.\-]{1,64}+@[A-Za-z0-9\-]{1,188}+\.[A-Za-z\.]{1,9}")
