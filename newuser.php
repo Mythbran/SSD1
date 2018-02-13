@@ -101,9 +101,9 @@
 	echo "<br>";
 	echo "<br>";
 	echo "City: <input type = 'text' id='city'>";
-	echo "Province: <select name="province">
-		<option value='Quebec'> Quebec </option>
-		<option value='Ontario'> Ontario </option>";
+	#echo "Province: <select name="province">
+	#	<option value='Quebec'> Quebec </option>
+	#	<option value='Ontario'> Ontario </option>";
 	echo "<br>";
 	echo "<br>";	
 	echo "Postal Code: <input type = 'text' id='pCode'>";
