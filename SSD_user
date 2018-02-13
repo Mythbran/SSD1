@@ -1,8 +1,13 @@
-CREATE TABLE userTable(
+CREATE TABLE users(
+uid oid NOT NULL,
 name text NOT NULL,
 email text NOT NULL,
-address text NOT NULL,
+streetName text NOT NULL,
+streetNum integer NOT NULL,
+city text NOT NULL,
+province text NOT NULL,
+postCode text NOT NULL,
 pNumber text NOT NULL,
 bio text NOT NULL,
-PRIMARY KEY (email, pNumber)
+PRIMARY KEY (uid)
 );
