@@ -69,10 +69,10 @@ $stmtVal = "{'$_POST[uName]', '$_POST[email]', '$_POST[sNum]', '$_POST[sName]', 
 $rtn = pg_execute($conn, "INSERT", array($stmtVal));
 
 if(!rtn){
-echo "INSERT UNSUCCESSFUL!!!!";
+echo "<h2>INSERT UNSUCCESSFUL!!!!</h2>";
 }
 else
-echo "INSERT SUCCESSFUL!!!";
+echo "<h2>INSERT SUCCESSFUL!!!</h2>";
 
 pg_close($conn);
 ?>
