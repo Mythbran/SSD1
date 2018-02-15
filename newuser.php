@@ -89,7 +89,7 @@
 	<?php 
 	
 	echo "&nbsp;&nbsp;<h1>Enter Your User Information</h1>";
-	echo "<form form name= 'newUser' action='enterUser.php' method='post'";
+	echo "<form form name= 'newUser' action='test.html' method='post'";
 	echo "<br>";
 	echo "<br>";
 	echo "&nbsp;&nbsp; Username: <input type = 'text' id='uName'>";
