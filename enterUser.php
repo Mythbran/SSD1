@@ -1,4 +1,7 @@
 <?php
+#redirects after 6 seconds
+header("refresh:6;url=index.html");
+
 #adds users to the db
 #general connection(not sure if works)
 $db = resource pg_connect ("host=localhost port=5432 dbname=user user=admin password=lizA098");
@@ -14,6 +17,4 @@ echo "INSERT FAILED!!!";
 }
 else
 echo "INSERT SUCCESSFUL!!!";
-#redirects after 5 seconds
-header("refresh:5;url=index.html");
 ?>
