@@ -58,21 +58,23 @@
 
  <h2>IF U CAN SEE THIS SOMETHING WENT RIGHT!!!!!! </h2>
 <?php
-#adds users to the db
-#general connection(not sure if works)
-$db = resource pg_connect ("host=localhost port=5432 dbname=user user=admin password=lizA098");
+$conn = resource pg_connect ("host=localhost port=5432 dbname=user user=admin password=lizA098");
 
-#insert query
-$insertQuery = ("INSERT INTO users VALUES '$_POST[uName]', '$_POST[email]', '$_POST[sNum]', '$_POST[sName]', '$_POST[city]', '$_POST[province]', '$_POST[pCode]', '$_POST[pNum]', '$_POST[bio]' ");
+$result = pg_prepare($dbconn, "INSERT","INSERT (uName, email, sName, sNum, city, province, pCode, pNum, bio) INTO users VALUES ($1)"); 
 
-#executes
-$result = pg_query($insertQuery); 
+#input sanitization goes here
 
-if(!result){
-echo "INSERT FAILED!!!";
+$stmtVal = "{'$_POST[uName]', '$_POST[email]', '$_POST[sNum]', '$_POST[sName]', '$_POST[city]', '$_POST[province]', '$_POST[pCode]', '$_POST[pNum]', '$_POST[bio]'}";
+
+$rtn = pg_execute($conn, "INSERT", array($stmtVal));
+
+if(!rtn){
+echo "INSERT UNSUCCESSFUL!!!!";
 }
 else
 echo "INSERT SUCCESSFUL!!!";
+
+pg_close($conn);
 ?>
       <footer>
         <p>&copy; D'AngeloTrudge 2018</p>
