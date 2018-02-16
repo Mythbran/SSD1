@@ -66,7 +66,8 @@ echo '<h2>CONNECTION UNSUCCESSFUL!!!!</h2>';
 else
 echo '<h2>CONNECTION SUCCESSFUL!!!</h2>';
 
-$result = pg_prepare($dbconn, "INSERT","INSERT (uName, email, sName, sNum, city, province, pCode, pNum, bio) INTO users VALUES ($1)"); 
+$result = pg_prepare($dbconn, "INSERT","INSERT INTO users (uName, email, sName, sNum, city, province, pCode, pNum, bio)
+VALUES ($1)"); 
 
 #input sanitization goes here
 
