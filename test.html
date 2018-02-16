@@ -61,7 +61,7 @@
 $conn = resource pg_connect ("host=localhost port=5432 dbname=user user=admin password=lizA098");
 
 if(!$conn){
-echo '<h2>CONNECTION UNSUCCESSFUL!!!!</h2>';
+echo pg_last_error($conn);
 }
 else
 echo '<h2>CONNECTION SUCCESSFUL!!!</h2>';
@@ -76,7 +76,7 @@ $stmtVal = "{'$_POST[uName]', '$_POST[email]', '$_POST[sNum]', '$_POST[sName]', 
 $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
 if(!$rtn){
-echo '<h2>INSERT UNSUCCESSFUL!!!!</h2>';
+echo pg_last_error($conn);
 }
 else
 echo '<h2>INSERT SUCCESSFUL!!!</h2>';
