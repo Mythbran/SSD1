@@ -73,7 +73,7 @@ VALUES ($1)");
 
 $stmtVal = "{'$_POST[uName]', '$_POST[email]', '$_POST[sNum]', '$_POST[sName]', '$_POST[city]', '$_POST[province]', '$_POST[pCode]', '$_POST[pNum]', '$_POST[bio]'}";
 
-$rtn = pg_execute($conn, "INSERT", array($stmtVal));
+$rtn = pg_execute($conn, "INSERT", $stmtVal);
 
 if(!rtn){
 echo '<h2>INSERT UNSUCCESSFUL!!!!</h2>';
