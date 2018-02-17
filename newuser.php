@@ -24,7 +24,9 @@
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
-
+<?php
+	print_r($_POST);
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -87,7 +89,6 @@
     </div>
 
 	<?php 
-	print _r($_POST);
 	echo "&nbsp;&nbsp;<h1>Enter Your User Information</h1>";
 	echo "<form form name= 'newUser' action='newuser.php' method='post'";
 	echo "<br>";
