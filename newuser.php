@@ -31,12 +31,12 @@
 		//Validation things 
 		$errors = array();
 		if(count($errors == 0)){
-			header("Location: /SSD1/enterUser.php");
+			header("Location: /enterUser.php");
 			exit();
 		}
 
 		else{
-			header("Location: /SSD1/index.php");
+			header("Location: /index.php");
 			exit();
 		}
 	
