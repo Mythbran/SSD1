@@ -33,7 +33,7 @@
 		$errors = array(); // array to hold errors
 
 		//username validation 
-		if(empty($_POST['uName'])){
+		if(empty($_POST['uname'])){
 			$errors['uname001'] = "Username cannot be empty";
 		}
 	# uName validation = ereg("[A-Za-z]{1,25}")
@@ -45,14 +45,23 @@
 		if(empty($_POST['email'])){
 			$errors['email001'] = "Email cannot be empty";
 		}
+                
+                //more email stuff
+                //shud sanitize/validate email
+                        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+                        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+                            $errors['email002'] = "Invalid email";
+                        }
 
 		//Street Number Validation 
-		if(empty($_POST['sNum'])){
+		if(empty($_POST['snum'])){
 			$errors['snum001'] = "Street Number cannot be empty";
 		}
+                
+                
 
 		//Street Name Validation 
-		if(empty($_POST['sName'])){
+		if(empty($_POST['sname'])){
 			$errors['sname001'] = "Street Name cannot be empty";
 		}
 	
@@ -61,18 +70,18 @@
 			$errors['city001'] = "City cannot be empty";
 		}
 
-		//Province Validation WORKING - may look at a whitelist
+		//Province Validation NOT WORKING MIGHT MAKE A WHITELIST 
 		if(empty($_POST['province'])){
 			$errors['province001'] = "Province cannot be empty";
 		}
 
 		//Postal Code Validation 
-		if(empty($_POST['pCode'])){
+		if(empty($_POST['pnode'])){
 			$errors['pcode001'] = "Postal Code cannot be empty";
 		}
 
 		//Phone Number Validation 
-		if(empty($_POST['pNum'])){
+		if(empty($_POST['pnum'])){
 			$errors['pnum001'] = "Phone Number cannot be empty";
 		}
 
@@ -252,14 +261,16 @@
 	<form method="post" target="" id="uform">
 		<!-- Username Form --> 
 		<p>
-		<label for="uName">Username: </label>
-		<input type="text" name="uName" id="uName"/>
+		<label for="uname">Username: </label>
+		<input type="text" name="uname" id="uname"/>
 		<!-- Username Validation -->
 		<?php
 			if(isset($errors['uname001'])) echo $errors['uname001'];#empty
 
 			if(isset($errors['uname002'])) echo $errors['uname002'];#A-Za-z 1-25 length
 
+                        #shud strip of slashes & tags
+                        
 
 
 		?>
@@ -268,17 +279,20 @@
 		<label for="email"> eMail: </label>
 		<input type="text" name="email" id="email"/>
 		<?php
-			if(isset($errors['email001'])) echo $errors['email001'];#empty
-
-
-
+			if(isset($errors['email001'])){
+                            echo $errors['email001'];#empty
+                        }
+                        
+                        if(isset($errors['email002'])){
+                            echo $errors['email002'];#invalid
+                        }
 		?>
 		</p>	
 
 		<p> 
 		<!-- Street Number Form --> 
 		<label for="sNum"> Street Number: </label>
-		<input type="text" name="sNum" id="sNum"/>
+		<input type="text" name="snum" id="snum"/>
 		<?php
 			if(isset($errors['sNum001'])) echo $errors['sNum001'];#empty
 
@@ -290,7 +304,7 @@
 
 		<!-- Street Name Form --> 
 		<label for="sName"> Street Name: </label>
-		<input type="text" name="sName" id="sName"/>
+		<input type="text" name="sname" id="sname"/>
 		<?php
 			if(isset($errors['sname001'])) echo $errors['sname001'];#empty
 
@@ -313,21 +327,21 @@
 
 		<!-- Province Form -->
 		<label for="province"> Province: </label>
-		<select name="province" id="province">
-		<option value="">--Select--</option>
-		<option value="AB">Alberta</option>
-		<option value="BC">British Columbia</option>
-		<option value="MN">Manitoba</option>
-		<option value="NB">New Brunswick</option>
-		<option value="NF">Newfoundland & labrador</option>
-		<option value="NT">Northwest Territories</option>
-		<option value="NS">Nova Scotia</option>
-		<option value="NV">Nunavut</option>
-		<option value="ON">Ontario</option>
-		<option value="PI">Prince Edward Island</option>
-		<option value="QB">Quebec</option>
-		<option value="SK">Saskatchewan</option>
-		<option value="YK">Yukon</option>
+		<select name="province" id="province" form="uform">
+		<option value=''>--Select--</option>
+		<option value='AB'>Alberta</option>
+		<option value='BC'>British Columbia</option>
+		<option value='MN'>Manitoba</option>
+		<option value='NB'>New Brunswick</option>
+		<option value='NF'>Newfoundland & labrador</option>
+		<option value='NT'>Northwest Territories</option>
+		<option value='NS'>Nova Scotia</option>
+		<option value='NV'>Nunavut</option>
+		<option value='ON'>Ontario</option>
+		<option value='PI'>Prince Edward Island</option>
+		<option value='QB'>Quebec</option>
+		<option value='SK'>Saskatchewan</option>
+		<option value='YK'>Yukon</option>
 		</select>	
 		<?php
 			if(isset($errors['province001'])) echo $errors['province001'];#empty
@@ -342,7 +356,7 @@
 		<p> 
 		<!-- Postal Code Form --> 
 		<label for="pCode"> Postal Code: </label>
-		<input type="text" name="pCode" id="pCode"/>
+		<input type="text" name="pcode" id="pcode"/>
 		<?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
 
@@ -354,7 +368,7 @@
 
 		<!-- Phone Number Form --> 
 		<label for="pNum"> Phone Number: </label>
-		<input type="text" name="pNum" id="pNum"/>
+		<input type="text" name="pnum" id="pnum"/>
 		<?php
 			if(isset($errors['pnum001'])) echo $errors['pnum001'];#empty
 
