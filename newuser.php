@@ -96,7 +96,8 @@
 		}
 
                 //valid phone number 
-                if(preg_match("[0-9]{1,3}", ($_POST['snum']), $matches)){//working on it rn
+                if(preg_match("[[\d\()-.]]{10}", ($_POST['snum']), $matches)){//working on it rn
+                    //only valid ones go thru
 			$errors['pnum002'] = "Not a valid phone number";
 		}
                 
@@ -308,8 +309,8 @@
 		<label for="sNum"> Street Number: </label>
 		<input type="text" name="snum" id="snum"/>
 		<?php
-			if(isset($errors['sNum001'])) echo $errors['sNum001'];#empty
-
+			if(isset($errors['snum001'])) echo $errors['snum001'];#empty
+if(isset($errors['snum002'])) echo $errors['snum002'];#empty
 
 
 		?>
@@ -385,7 +386,7 @@
 		<input type="text" name="pnum" id="pnum"/>
 		<?php
 			if(isset($errors['pnum001'])) echo $errors['pnum001'];#empty
-
+if(isset($errors['pnum002'])) echo $errors['pnum002'];#empty
 
 
 		?>
