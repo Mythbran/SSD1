@@ -61,7 +61,7 @@
 			$errors['city001'] = "City cannot be empty";
 		}
 
-		//Province Validation NOT WORKING MIGHT MAKE A WHITELIST 
+		//Province Validation WORKING - may look at a whitelist
 		if(empty($_POST['province'])){
 			$errors['province001'] = "Province cannot be empty";
 		}
@@ -313,21 +313,21 @@
 
 		<!-- Province Form -->
 		<label for="province"> Province: </label>
-		<select name="sName" id="sName" form="uform">
-		<option value=''>--Select--</option>
-		<option value='AB'>Alberta</option>
-		<option value='BC'>British Columbia</option>
-		<option value='MN'>Manitoba</option>
-		<option value='NB'>New Brunswick</option>
-		<option value='NF'>Newfoundland & labrador</option>
-		<option value='NT'>Northwest Territories</option>
-		<option value='NS'>Nova Scotia</option>
-		<option value='NV'>Nunavut</option>
-		<option value='ON'>Ontario</option>
-		<option value='PI'>Prince Edward Island</option>
-		<option value='QB'>Quebec</option>
-		<option value='SK'>Saskatchewan</option>
-		<option value='YK'>Yukon</option>
+		<select name="province" id="province">
+		<option value="">--Select--</option>
+		<option value="AB">Alberta</option>
+		<option value="BC">British Columbia</option>
+		<option value="MN">Manitoba</option>
+		<option value="NB">New Brunswick</option>
+		<option value="NF">Newfoundland & labrador</option>
+		<option value="NT">Northwest Territories</option>
+		<option value="NS">Nova Scotia</option>
+		<option value="NV">Nunavut</option>
+		<option value="ON">Ontario</option>
+		<option value="PI">Prince Edward Island</option>
+		<option value="QB">Quebec</option>
+		<option value="SK">Saskatchewan</option>
+		<option value="YK">Yukon</option>
 		</select>	
 		<?php
 			if(isset($errors['province001'])) echo $errors['province001'];#empty
