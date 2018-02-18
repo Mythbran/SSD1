@@ -1,3 +1,4 @@
+RewriteRule ^newuser.php
 # Apache Server Configs v2.11.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
@@ -336,10 +337,10 @@ AddDefaultCharset utf-8
 #
 #     https://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriteoptions
 
-<IfModule mod_rewrite.c>
+#<IfModule mod_rewrite.c>
 
     # (1)
-    RewriteEngine On
+ #   RewriteEngine On
 
     # (2)
     Options +FollowSymlinks
@@ -353,7 +354,7 @@ AddDefaultCharset utf-8
     # (5)
     # RewriteOptions <options>
 
-</IfModule>
+#</IfModule>
 
 # ----------------------------------------------------------------------
 # | Forcing `https://`                                                 |
