@@ -58,17 +58,27 @@
 			$errors['snum001'] = "Street Number cannot be empty";
 		}
                 
+                //valid number from 1 to 999
+                if(preg_match("[0-9]{1,3}", ($_POST['snum']), $matches)){
+			$errors['snum002'] = "Not a valid street number";
+		}
                 
 
 		//Street Name Validation 
-		if(empty($_POST['sname'])){
+		if(empty($_POST['sname'])){//if empty
 			$errors['sname001'] = "Street Name cannot be empty";
+		}
+                
+                if(preg_match("[A-Za-z]{1,25}", ($_POST['sname']), $matches)){
+			$errors['sname002'] = "Street name must be between 1-25 characters and contain only alphabetic characters";
 		}
 	
 		//City Validation 
 		if(empty($_POST['city'])){
 			$errors['city001'] = "City cannot be empty";
 		}
+                
+                //not too sure bout this. you said u might make a whitelist???
 
 		//Province Validation NOT WORKING MIGHT MAKE A WHITELIST 
 		if(empty($_POST['province'])){
@@ -85,7 +95,11 @@
 			$errors['pnum001'] = "Phone Number cannot be empty";
 		}
 
-	
+                //valid phone number 
+                if(preg_match("[0-9]{1,3}", ($_POST['snum']), $matches)){//working on it rn
+			$errors['pnum002'] = "Not a valid phone number";
+		}
+                
 		if(count($errors) == 0){
 			header("Location: /enterUser.php");
 			exit();
