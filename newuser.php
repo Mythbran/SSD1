@@ -25,18 +25,56 @@
  * Pass should request and store info 	      *  
  * ****************************************** -->
 <?php 
-	print_r($_POST);
-
+	
 	if($_POST){
 		//Validation things 
-		$errors = array();
-		if(count($errors == 0)){
-			header("Location: /enterUser.php");
-			exit();
+
+
+		$errors = array(); // array to hold errors
+
+		//username validation 
+		if(empty($_POST['uName'])){
+			$errors['uname001'] = "Username cannot be empty";
 		}
 
-		else{
-			header("Location: /index.php");
+		//email validation
+		if(empty($_POST['email'])){
+			$errors['email001'] = "Email cannot be empty";
+		}
+
+		//Street Number Validation 
+		if(empty($_POST['sNum'])){
+			$errors['snum001'] = "Street Number cannot be empty";
+		}
+
+		//Street Name Validation 
+		if(empty($_POST['sName'])){
+			$errors['sname001'] = "Street Name cannot be empty";
+		}
+	
+		//City Validation 
+		if(empty($_POST['city'])){
+			$errors['city001'] = "City cannot be empty";
+		}
+
+		//Province Validation NOT WORKING MIGHT MAKE A WHITELIST 
+		if(empty($_POST['province'])){
+			$errors['province001'] = "Province cannot be empty";
+		}
+
+		//Postal Code Validation 
+		if(empty($_POST['pCode'])){
+			$errors['pcode001'] = "Postal Code cannot be empty";
+		}
+
+		//Phone Number Validation 
+		if(empty($_POST['pNum'])){
+			$errors['pnum001'] = "Phone Number cannot be empty";
+		}
+
+	
+		if(count($errors) == 0){
+			header("Location: /enterUser.php");
 			exit();
 		}
 	
@@ -108,34 +146,99 @@
 	echo "<form form name= 'newUser' action='' method='post'";
 	echo "<br>";
 	echo "<br>";
+
+	#username form 
 	echo "&nbsp;&nbsp; Username: <input type = 'text' id='uName'>";
+	#printing username validation 
+	if(isset($errors['uname001'])) echo $errors['uname001'];#empty
 	# uName validation = ereg("[A-Za-z]{1,25}")
+
+
+	#email form
 	echo "&nbsp;&nbsp;Email Address: <input type = 'email' id='email'>";
+	#email validation 
+	if(isset($errors['email001'])) echo $errors['email001'];#empty
 	#Validation for email = ereg("[A-Za-z0-9\.\-]{1,64}+@[A-Za-z0-9\-]{1,188}+\.[A-Za-z\.]{1,9}")
+
+
 	echo "<br>";
 	echo "<br>";
+
+	
+	##Street Number Form
 	echo "&nbsp;&nbsp;Street Number: <input type = 'text' id='sNum'>";
+	##Street Number Validation 
+	if(isset($errors['snum001'])) echo $errors['snum001'];#empty
+
+
+	#Street Name Form
 	echo "&nbsp;&nbsp;Street Name: <input type = 'text' id='sName'>";
+	#Street Name Validation 
+	if(isset($errors['sname001'])) echo $errors['sname001'];#empty
+
+
+
 	echo "<br>";
 	echo "<br>";
+
+	#city form
 	echo "&nbsp;&nbsp;City: <input type = 'text' id='city'>";
+	#city validation 
+	if(isset($errors['city001'])) echo $errors['city001'];
+
+	
+	#provice form
 	echo "&nbsp;&nbsp;Province: <select name='province' id='province'>
-		<option value='0'>--Select--</option>
-		<option value='Ontario'>Ontario</option>
-		<option value='Quebec'>Quebec</option>
+		<option value=''>--Select--</option>
+		<option value='AB'>Alberta</option>
+		<option value='BC'>British Columbia</option>
+		<option value='MN'>Manitoba</option>
+		<option value='NB'>New Brunswick</option>
+		<option value='NF'>Newfoundland & labrador</option>
+		<option value='NT'>Northwest Territories</option>
+		<option value='NS'>Nova Scotia</option>
+		<option value='NV'>Nunavut</option>
+		<option value='ON'>Ontario</option>
+		<option value='PI'>Prince Edward Island</option>
+		<option value='QB'>Quebec</option>
+		<option value='SK'>Saskatchewan</option>
+		<option value='YK'>Yukon</option>
 		</select>";
+	#province validation 
+	if(isset($errors['provice001'])) echo $errors['province001'];
+
+
 	echo "<br>";
 	echo "<br>";	
+
+	#Postal Code Form
 	echo "&nbsp;&nbsp;Postal Code: <input type = 'text' id='pCode'>";
+	#postal code validation 
+	if(isset($errors['pcode001'])) echo $errors['pcode001'];
+
+
+	#Phone Number Form
 	echo "&nbsp;&nbsp;Phone Number: <input type = 'tel' id='pNum'>";
+	#Phone Number Validation
+	if(isset($errors['pnum001'])) echo $errors['pnum001'];
+	
 	#pNum validation = ereg ("\(?[0-9]{3}[\.\-\)]?[0-9]{3}[\.\-]?[0-9]{4}
+
+
 	echo "<br>";
 	echo "<br>";
+
+	#bio form
 	echo "&nbsp;&nbsp;Bio: <textarea name='bio' rows='5' cols='40'></textarea>";
+	#bio validation & sanitation	
+	
 	echo "<br>";
 	echo "<br>";
+
+	#buttons
 	echo "&nbsp;&nbsp;<input type='submit' name='submit' value='Submit'>";
 	echo "&nbsp;&nbsp;<input type='reset' name='reset' value='Reset'>";
+
 	echo "</form>";
 	
 	?>
