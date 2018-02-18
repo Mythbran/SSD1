@@ -24,8 +24,23 @@
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
-<?php
+<?php 
 	print_r($_POST);
+
+	if($_POST){
+		//Validation things 
+		$errors = array();
+		if(count($errors == 0)){
+			header("Location: /SSD1/enterUser.php");
+			exit();
+		}
+
+		else{
+			header("Location: /SSD1/index.php");
+			exit();
+		}
+	
+	}
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -89,8 +104,8 @@
     </div>
 
 	<?php 
-	echo "&nbsp;&nbsp;<h1>Enter Your User Information</h1>";
-	echo "<form form name= 'newUser' action='newuser.php' method='post'";
+
+	echo "<form form name= 'newUser' action='' method='post'";
 	echo "<br>";
 	echo "<br>";
 	echo "&nbsp;&nbsp; Username: <input type = 'text' id='uName'>";
