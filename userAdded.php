@@ -59,26 +59,28 @@
         </nav>
 
         <?php
-        $conn = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!");
+        $conn = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!")or die ("shit ");
 
         //makes sure connection was successful
-        if (!$conn) {
+        if (!$conn) {	
             echo pg_last_error($conn);
-			echo "shit broke";
+			
         } else {
 
-
+            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[sname]", "$_POST[snum]", "$_POST[city]", "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
             //prepared statement & query string
+            
             $result = pg_prepare($conn, "INSERT", 'INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)');
 
             #input sanitization goes here
-            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[sname]", "$_POST[snum]", "$_POST[city]", "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
+
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
             //makes sure that the insert executed properly
             if (!$rtn) {
                 echo pg_last_error($conn);
+                #echo ("shit broke");
             } else {
 		echo "The Following Information Was Added To The Database";
                 $inLen = count($stmtVal); //counts length of the input array stmtVal
