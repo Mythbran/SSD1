@@ -291,7 +291,7 @@
 		<!-- Username Form --> 
 		<p>
 		<label for="uName">Username: </label>
-		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']?>"/>
+		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']; ?>"/>
 
 		<!-- Username Validation -->
 		<span class="errors"> * <?php
