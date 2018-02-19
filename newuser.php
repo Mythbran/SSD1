@@ -25,7 +25,7 @@
  * Pass should request and store info 	      *  
  * ****************************************** -->
 <?php 
-	print_r($_POST);
+	//print_r($_POST);
 	if($_POST){
 		//Validation things 
 
@@ -37,7 +37,7 @@
 			$errors['uname001'] = "Username cannot be empty";
 		}
 	# uName validation = ereg("[A-Za-z]{1,25}")
-		if(preg_match("[A-Za-z]{1,25}", ($_POST['uName']), $matches)){
+		if(egrep('[A-Za-z]{1,25}', ($_POST['uName']))){
 			$errors['uname002'] = "Username must be between 1-25 characters and contain only alphabetic characters";
 		}
 
@@ -252,8 +252,8 @@
 	<form method="post" target="" id="uform">
 		<!-- Username Form --> 
 		<p>
-		<label for="uName">Username: </label>
-		<input type="text" name="uName" id="uName"/>
+		<label for="uName">Username: *</label>
+		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']?>"/>
 		<!-- Username Validation -->
 		<?php
 			if(isset($errors['uname001'])) echo $errors['uname001'];#empty
@@ -265,8 +265,8 @@
 		?>
 
 		<!-- email Form -->
-		<label for="email"> eMail: </label>
-		<input type="text" name="email" id="email"/>
+		<label for="email"> eMail: *</label>
+		<input type="text" name="email" id="email"value="<?php if(isset($_POST['email'])); echo $_POST['email']?>"/>
 		<?php
 			if(isset($errors['email001'])) echo $errors['email001'];#empty
 
@@ -277,8 +277,8 @@
 
 		<p> 
 		<!-- Street Number Form --> 
-		<label for="sNum"> Street Number: </label>
-		<input type="text" name="sNum" id="sNum"/>
+		<label for="sNum"> Street Number: *</label>
+		<input type="text" name="sNum" id="sNum"value="<?php if(isset($_POST['sNum'])); echo $_POST['sNum']?>"/>
 		<?php
 			if(isset($errors['sNum001'])) echo $errors['sNum001'];#empty
 
@@ -289,8 +289,8 @@
 
 
 		<!-- Street Name Form --> 
-		<label for="sName"> Street Name: </label>
-		<input type="text" name="sName" id="sName"/>
+		<label for="sName"> Street Name: *</label>
+		<input type="text" name="sName" id="sName"value="<?php if(isset($_POST['sName'])); echo $_POST['sName']?>"/>
 		<?php
 			if(isset($errors['sname001'])) echo $errors['sname001'];#empty
 
@@ -301,8 +301,8 @@
 
 		<p> 
 		<!-- City Form --> 
-		<label for="city"> City: </label>
-		<input type="text" name="city" id="city"/>
+		<label for="city"> City: *</label>
+		<input type="text" name="city" id="city"value="<?php if(isset($_POST['city'])); echo $_POST['city']?>"/>
 		<?php
 			if(isset($errors['city001'])) echo $errors['city001'];#empty
 
@@ -312,7 +312,7 @@
 
 
 		<!-- Province Form -->
-		<label for="province"> Province: </label>
+		<label for="province"> Province: *</label>
 		<select name="province" id="province">
 		<option value="">--Select--</option>
 		<option value="AB">Alberta</option>
@@ -341,8 +341,8 @@
 
 		<p> 
 		<!-- Postal Code Form --> 
-		<label for="pCode"> Postal Code: </label>
-		<input type="text" name="pCode" id="pCode"/>
+		<label for="pCode"> Postal Code: *</label>
+		<input type="text" name="pCode" id="pCode"value="<?php if(isset($_POST['pCode'])); echo $_POST['pCode']?>"/>
 		<?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
 
@@ -353,8 +353,8 @@
 
 
 		<!-- Phone Number Form --> 
-		<label for="pNum"> Phone Number: </label>
-		<input type="text" name="pNum" id="pNum"/>
+		<label for="pNum"> Phone Number: *</label>
+		<input type="text" name="pNum" id="pNum"value="<?php if(isset($_POST['pNum'])); echo $_POST['pNum']?>"/>
 		<?php
 			if(isset($errors['pnum001'])) echo $errors['pnum001'];#empty
 
