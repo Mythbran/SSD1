@@ -58,7 +58,7 @@
 
         <h2>The Following Information Was Added To The Database:</h2>
         <?php
-        $conn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=admin");
+        $conn = pg_connect("host=localhost port=5432 dbname=user user=insertUser password=sdMg4%68");
 
         //makes sure connection was successful
         if (!$conn) {
