@@ -66,15 +66,15 @@
             echo pg_last_error($conn);
 			echo "shit broke";
         } else {
-echo "The Following Information Was Added To The Database";
+
 
             //prepared statement & query string
             $result = pg_prepare($conn, "INSERT", "INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)");
 
             #input sanitization goes here
 			echo "Username: $_POST[uname]";
-            $stmtVal = array("$_POST[uName]", "$_POST[email]", "$_POST[sNum]", "$_POST[sName]", "$_POST[city]",
-                "$_POST[province]", "$_POST[pCode]", "$_POST[pNum]", "$_POST[bio]");
+            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[snum]", "$_POST[sname]", "$_POST[city]",
+                "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
@@ -82,6 +82,7 @@ echo "The Following Information Was Added To The Database";
             if (!$rtn) {
                 echo pg_last_error($conn);
             } else {
+		echo "The Following Information Was Added To The Database";
                 $inLen = count($stmtVal); //counts length of the input array stmtVal
                 //prints out the info that was just inserted
                 for ($x = 0; $x < $inLen; $x++) {
