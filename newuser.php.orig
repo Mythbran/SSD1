@@ -20,11 +20,12 @@
  *  - bio fields must be stripped of code     * 
  *	HTML CSS JS special characters            * 
  *  - bio field stripped of SQL keywords      * 
- *	INSERT UPDATE DELETE		      * 
+ *	INSERT UPDATE DELETE		              * 
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
 <?php 
+	//print_r($_POST);
 	if($_POST){
 		//Validation things 
 
