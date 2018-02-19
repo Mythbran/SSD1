@@ -69,7 +69,7 @@
 			$errors['sname001'] = "Street Name cannot be empty";
 		}
                 
-                if(preg_match("[A-Za-z]{1,25}", ($_POST['sname']), $matches)){
+                if(preg_match("[A-Za-z\s]{1,25}", ($_POST['sname']), $matches)){//added white spaces
 			$errors['sname002'] = "Street name must be between 1-25 characters and contain only alphabetic characters";
 		}
 	
