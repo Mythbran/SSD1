@@ -32,11 +32,11 @@
 		$errors = array(); // array to hold errors
 
 		//username validation 
-		if(empty($_POST['uName'])){
+		if(empty($_POST['uname'])){
 			$errors['uname001'] = "Username is required";
 		}
 	# uName validation = ereg("[A-Za-z]{1,25}")
-		if(!preg_match("/^[a-zA-Z]{1,25}$/", $_POST["uName"])){
+		if(!preg_match("/^[a-zA-Z]{1,25}$/", $_POST["uname"])){
 			$errors['uname002'] = "Only letters are allowed. Max 25 characters";
 		}
 
@@ -56,13 +56,13 @@
        
 
 		//Street Number Validation 
-		if(empty($_POST['sNum'])){//if empty
+		if(empty($_POST['snum'])){//if empty
 			$errors['snum001'] = "Street Number is requred";
 		}
 
 
 		//Street Name Validation 
-		if(empty($_POST['sName'])){//if empty
+		if(empty($_POST['sname'])){//if empty
 			$errors['sname001'] = "Street Name is requred";
 		}
 
@@ -89,7 +89,7 @@
 		}
 
 		//Postal Code Validation 
-		if(empty($_POST['pCode'])){
+		if(empty($_POST['pcode'])){
 			$errors['pcode001'] = "Postal Code is requred";
 		}
 
@@ -99,7 +99,7 @@
 		}
 
 		//Phone Number Validation 
-		if(empty($_POST['pNum'])){
+		if(empty($_POST['pnum'])){
 			$errors['pnum001'] = "Phone Number is requred";
 		}
 
@@ -195,8 +195,8 @@
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
 		<!-- Username Form --> 
 		<p>
-		<label for="uName">Username: </label>
-		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']; ?>"/>
+		<label for="uname">Username: </label>
+		<input type="text" name="uname" id="uname" value="<?php if(isset($_POST['uname'])); echo $_POST['uname']; ?>"/>
 
 		<!-- Username Validation -->
 		<span class="errors"> * <?php
@@ -226,8 +226,8 @@
 
 		<p> 
 		<!-- Street Number Form --> 
-		<label for="sNum"> Street Number: </label>
-		<input type="text" name="sNum" id="sNum"value="<?php if(isset($_POST['sNum'])); echo $_POST['sNum']?>"/>
+		<label for="snum"> Street Number: </label>
+		<input type="text" name="snum" id="snum"value="<?php if(isset($_POST['snum'])); echo $_POST['snum']?>"/>
 
 		<span class="errors"> * <?php
 			if(isset($errors['snum001'])) echo $errors['snum001'];#empty
@@ -238,8 +238,8 @@
 
 
 		<!-- Street Name Form --> 
-		<label for="sName"> Street Name: </label>
-		<input type="text" name="sName" id="sName"value="<?php if(isset($_POST['sName'])); echo $_POST['sName']?>"/>
+		<label for="sname"> Street Name: </label>
+		<input type="text" name="sname" id="sname"value="<?php if(isset($_POST['sname'])); echo $_POST['sname']?>"/>
 
 		<span class="errors"> * <?php
 			if(isset($errors['sname001'])) echo $errors['sname001'];#empty
@@ -294,8 +294,8 @@
 		<p> 
 		<!-- Postal Code Form --> 
 
-		<label for="pCode"> Postal Code: </label>
-		<input type="text" name="pCode" id="pCode" value="<?php if(isset($_POST['pCode'])); echo $_POST['pCode']?>">
+		<label for="pcode"> Postal Code: </label>
+		<input type="text" name="pCode" id="pcode" value="<?php if(isset($_POST['pcode'])); echo $_POST['pcode']?>">
 
 		<span class="errors"> * <?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
@@ -309,8 +309,8 @@
 
 		<!-- Phone Number Form --> 
 
-		<label for="pNum"> Phone Number: </label>
-		<input type="text" name="pNum" id="pNum"value="<?php if(isset($_POST['pNum'])); echo $_POST['pNum']?>"/>
+		<label for="pnum"> Phone Number: </label>
+		<input type="text" name="pnum" id="pnum"value="<?php if(isset($_POST['pnum'])); echo $_POST['pnum']?>"/>
 
 
 		<span class="errors">* <?php
