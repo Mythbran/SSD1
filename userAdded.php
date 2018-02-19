@@ -59,7 +59,7 @@
         </nav>
 
         <?php
-        $conn = pg_connect("host=localhost port=5432 dbname=user user=insertUser password=sdMg4%68");
+        $conn = pg_connect("host=localhost port=5432 dbname=user user=insertUser password=sdMg4%68") or die("could not connect");
 
         //makes sure connection was successful
         if (!$conn) {
