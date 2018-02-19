@@ -114,6 +114,10 @@
 	    	$temp = htmlspecialchars($temp);
 	    	$temp = trim($temp);
                     
+		if(!preg_match("[a-zA-Z][\s]", $temp, $matches)){//anything other than letters and spaces
+                   $temp = str_replace($matches, "", $temp);//replaces with null
+		}
+		
                 if(preg_match("(?i)select|delete|insert", $temp, $matches)){//removes SQL operations
                    $temp = str_replace($matches, "", $temp);//replaces with null
 		}
