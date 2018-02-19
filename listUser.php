@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2>User List</h2>
-                    <h3>A LIst of users is below</h3>
+                    <h3>A List of Users is Below</h3>
 
                     <?php
                     //database connection
