@@ -20,7 +20,7 @@
  *  - bio fields must be stripped of code     * 
  *	HTML CSS JS special characters            * 
  *  - bio field stripped of SQL keywords      * 
- *	INSERT UPDATE DELETE		      * 
+ *	INSERT UPDATE DELETE		      		  * 
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
@@ -32,45 +32,45 @@
 		$errors = array(); // array to hold errors
 
 		//username validation 
-		if(empty($_POST['uname'])){
+		if(empty($_POST['uName'])){
 			$errors['uname001'] = "Username cannot be empty";
 		}
 	# uName validation = ereg("[A-Za-z]{1,25}")
-		if(egrep('[A-Za-z]{1,25}', ($_POST['uName']))){
+		/*if(egrep('[A-Za-z]{1,25}', ($_POST['uName']))){
 			$errors['uname002'] = "Username must be between 1-25 characters and contain only alphabetic characters";
-		}
+		}*/
 
 		//email validation
 		if(empty($_POST['email'])){
 			$errors['email001'] = "Email cannot be empty";
 		}
                 
-                //more email stuff
+               /* //more email stuff
                 //shud sanitize/validate email
                         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
                         if (filter_var($email, FILTER_VALIDATE_EMAIL)){
                             $errors['email002'] = "Invalid email";
-                        }
+                        }*/
 
 		//Street Number Validation 
-		if(empty($_POST['snum'])){
+		if(empty($_POST['sNum'])){//if empty
 			$errors['snum001'] = "Street Number cannot be empty";
 		}
                 
-                //valid number from 1 to 999
-                if(preg_match("[0-9]{1,3}", ($_POST['snum']), $matches)){
+               /* //valid number from 1 to 999
+                if(preg_match("[0-9]{1,3}", ($_POST['sNum']), $matches)){
 			$errors['snum002'] = "Not a valid street number";
-		}
+		}*/
                 
 
 		//Street Name Validation 
-		if(empty($_POST['sname'])){//if empty
+		if(empty($_POST['sName'])){//if empty
 			$errors['sname001'] = "Street Name cannot be empty";
 		}
-                
-                if(preg_match("[A-Za-z\s]{1,25}", ($_POST['sname']), $matches)){//added white spaces
+               /* 
+                if(preg_match("[A-Za-z\s]{1,25}", ($_POST['sName']), $matches)){//added white spaces
 			$errors['sname002'] = "Street name must be between 1-25 characters and contain only alphabetic characters";
-		}
+		}*/
 	
 		//City Validation 
 		if(empty($_POST['city'])){
@@ -85,20 +85,20 @@
 		}
 
 		//Postal Code Validation 
-		if(empty($_POST['pnode'])){
+		if(empty($_POST['pCode'])){
 			$errors['pcode001'] = "Postal Code cannot be empty";
 		}
 
 		//Phone Number Validation 
-		if(empty($_POST['pnum'])){
+		if(empty($_POST['pNum'])){
 			$errors['pnum001'] = "Phone Number cannot be empty";
 		}
-
-                //valid phone number 
-                if(preg_match("[[\d\()-.]]{10}", ($_POST['snum']), $matches)){//working on it rn
+/*
+        //valid phone number 
+        if(preg_match("[[\d\()-.]]{10}", ($_POST['pNum']), $matches)){//working on it rn
                     //only valid ones go thru
 			$errors['pnum002'] = "Not a valid phone number";
-		}
+		}*/
                 
 		if(count($errors) == 0){
 			header("Location: /enterUser.php");
@@ -275,13 +275,9 @@
 	<form method="post" target="" id="uform">
 		<!-- Username Form --> 
 		<p>
-<<<<<<< HEAD
 		<label for="uName">Username: *</label>
 		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']?>"/>
-=======
-		<label for="uname">Username: </label>
-		<input type="text" name="uname" id="uname"/>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
+
 		<!-- Username Validation -->
 		<?php
 			if(isset($errors['uname001'])) echo $errors['uname001'];#empty
@@ -299,41 +295,32 @@
 		<input type="text" name="email" id="email"value="<?php if(isset($_POST['email'])); echo $_POST['email']?>"/>
 		<?php
 			if(isset($errors['email001'])){
-                            echo $errors['email001'];#empty
-                        }
+            	echo $errors['email001'];#empty
+            }
                         
-                        if(isset($errors['email002'])){
-                            echo $errors['email002'];#invalid
-                        }
+            if(isset($errors['email002'])){
+            	echo $errors['email002'];#invalid
+            }
 		?>
 		</p>	
 
 		<p> 
 		<!-- Street Number Form --> 
-<<<<<<< HEAD
 		<label for="sNum"> Street Number: *</label>
 		<input type="text" name="sNum" id="sNum"value="<?php if(isset($_POST['sNum'])); echo $_POST['sNum']?>"/>
-=======
-		<label for="sNum"> Street Number: </label>
-		<input type="text" name="snum" id="snum"/>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
+
 		<?php
 			if(isset($errors['snum001'])) echo $errors['snum001'];#empty
-if(isset($errors['snum002'])) echo $errors['snum002'];#empty
+
 
 
 		?>
 
 
-
 		<!-- Street Name Form --> 
-<<<<<<< HEAD
 		<label for="sName"> Street Name: *</label>
 		<input type="text" name="sName" id="sName"value="<?php if(isset($_POST['sName'])); echo $_POST['sName']?>"/>
-=======
-		<label for="sName"> Street Name: </label>
-		<input type="text" name="sname" id="sname"/>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
+
 		<?php
 			if(isset($errors['sname001'])) echo $errors['sname001'];#empty
 
@@ -355,24 +342,7 @@ if(isset($errors['snum002'])) echo $errors['snum002'];#empty
 
 
 		<!-- Province Form -->
-<<<<<<< HEAD
-		<label for="province"> Province: *</label>
-		<select name="province" id="province">
-		<option value="">--Select--</option>
-		<option value="AB">Alberta</option>
-		<option value="BC">British Columbia</option>
-		<option value="MN">Manitoba</option>
-		<option value="NB">New Brunswick</option>
-		<option value="NF">Newfoundland & labrador</option>
-		<option value="NT">Northwest Territories</option>
-		<option value="NS">Nova Scotia</option>
-		<option value="NV">Nunavut</option>
-		<option value="ON">Ontario</option>
-		<option value="PI">Prince Edward Island</option>
-		<option value="QB">Quebec</option>
-		<option value="SK">Saskatchewan</option>
-		<option value="YK">Yukon</option>
-=======
+
 		<label for="province"> Province: </label>
 		<select name="province" id="province" form="uform">
 		<option value=''>--Select--</option>
@@ -389,7 +359,6 @@ if(isset($errors['snum002'])) echo $errors['snum002'];#empty
 		<option value='QB'>Quebec</option>
 		<option value='SK'>Saskatchewan</option>
 		<option value='YK'>Yukon</option>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
 		</select>	
 		<?php
 			if(isset($errors['province001'])) echo $errors['province001'];#empty
@@ -403,13 +372,10 @@ if(isset($errors['snum002'])) echo $errors['snum002'];#empty
 
 		<p> 
 		<!-- Postal Code Form --> 
-<<<<<<< HEAD
+
 		<label for="pCode"> Postal Code: *</label>
-		<input type="text" name="pCode" id="pCode"value="<?php if(isset($_POST['pCode'])); echo $_POST['pCode']?>"/>
-=======
-		<label for="pCode"> Postal Code: </label>
-		<input type="text" name="pcode" id="pcode"/>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
+		<input type="text" name="pCode" id="pCode" value="<?php if(isset($_POST['pCode'])); echo $_POST['pCode']?>">
+
 		<?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
 
@@ -420,16 +386,14 @@ if(isset($errors['snum002'])) echo $errors['snum002'];#empty
 
 
 		<!-- Phone Number Form --> 
-<<<<<<< HEAD
+
 		<label for="pNum"> Phone Number: *</label>
 		<input type="text" name="pNum" id="pNum"value="<?php if(isset($_POST['pNum'])); echo $_POST['pNum']?>"/>
-=======
-		<label for="pNum"> Phone Number: </label>
-		<input type="text" name="pnum" id="pnum"/>
->>>>>>> ac08c4c559926db160822ed328154761b1b5fe9b
+
+
 		<?php
 			if(isset($errors['pnum001'])) echo $errors['pnum001'];#empty
-if(isset($errors['pnum002'])) echo $errors['pnum002'];#empty
+			if(isset($errors['pnum002'])) echo $errors['pnum002'];#Valid
 
 
 		?>
