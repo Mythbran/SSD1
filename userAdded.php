@@ -1,8 +1,5 @@
 
-<?php
 
-print_r($_POST);
-?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -76,8 +73,8 @@ print_r($_POST);
 
             #input sanitization goes here
 
-            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[snum]", "$_POST[sname]", "$_POST[city]",
-                "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
+            $stmtVal = array("$_POST[uName]", "$_POST[email]", "$_POST[sNum]", "$_POST[sName]", "$_POST[city]",
+                "$_POST[province]", "$_POST[pCode]", "$_POST[pNum]", "$_POST[bio]");
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
