@@ -63,7 +63,6 @@ print_r($_POST);
 
         <h2>The Following Information Was Added To The Database:</h2>
         <?php
-		echo "$_POST['uName']$_POST['email']$_POST['sName']$_POST['sNum']$_POST['city']$_POST['province']$_POST['pCode']$_POST['pNum']$_POST['bio']";
         $conn = pg_connect("host=localhost port=5432 dbname=user user=insertUser password=sdMg4%68");
 
         //makes sure connection was successful
