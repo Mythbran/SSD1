@@ -1,4 +1,7 @@
-
+<?php
+#redircts to index after 6 sec, but doesnt work if anything is drawn on screen
+	header("redirect:6;url=index.html");
+?>
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -6,10 +9,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-        <?php
-        #redircts to index after 6 sec, but doesnt work if anything is drawn on screen
-        header("redirect:6;url=index.html");
-        ?>
+
         <meta charset="utf-8">
         <meta https-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
