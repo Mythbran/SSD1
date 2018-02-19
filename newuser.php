@@ -211,7 +211,7 @@
 		?></span>
 
 		<!-- email Form -->
-		<label for="email"> eMail: </label>
+		<label for="email"> Email: </label>
 		<input type="text" name="email" id="email"value="<?php if(isset($_POST['email'])); echo $_POST['email']?>"/>
 		<span class="errors"> * <?php
 			if(isset($errors['email001'])){
