@@ -61,7 +61,7 @@
 
                     <?php
                     //database connection
-                    $db = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!");
+                    $db = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!") or die ("connection refused");
                     $result = pg_query($db, 'SELECT * FROM users');
 
                     //prints out table and values
