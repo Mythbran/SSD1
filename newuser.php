@@ -116,7 +116,7 @@
 		}*/
                 
 		if(count($errors) == 0){
-			header("Location: /enterUser.php");
+			header("Location: /SSD1/userAdded.php");
 			exit();
 		}
 	

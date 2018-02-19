@@ -13,7 +13,8 @@ $insertQuery = ("INSERT INTO users VALUES '$_POST[uName]', '$_POST[email]', '$_P
 $result = pg_query($insertQuery); 
 
 if(!result){
-echo "INSERT FAILED!!!";
+	echo "INSERT FAILED!!!";
+	header("refresh:3; url = newuser.php");
 }
 else
 echo "INSERT SUCCESSFUL!!!";
