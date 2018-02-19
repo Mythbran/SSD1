@@ -73,8 +73,8 @@
 
             #input sanitization goes here
 
-            $stmtVal = array("$_POST[uName]", "$_POST[email]", "$_POST[sNum]", "$_POST[sName]", "$_POST[city]",
-                "$_POST[province]", "$_POST[pCode]", "$_POST[pNum]", "$_POST[bio]");
+            $stmtVal = array("$_POST['uName']", "$_POST['email']", "$_POST['sNum']", "$_POST['sName']", "$_POST['city']",
+                "$_POST['province']", "$_POST['pCode']", "$_POST['pNum']", "$_POST['bio']");
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
