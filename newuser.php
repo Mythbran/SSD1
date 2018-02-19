@@ -40,33 +40,33 @@
 			$errors['uname002'] = "Only letters are allowed. Max 25 characters";
 		}
 
+		//STILL NEEDS REMOVAL OF WHITESPACE - SANITATION 
+
+
 		//email validation
 		if(empty($_POST['email'])){
 			$errors['email001'] = "Email is requred";
 		}
-                
-               /* //more email stuff
-                //shud sanitize/validate email
-                        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-                        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-                            $errors['email002'] = "Invalid email";
-                        }*/
+              
+        //Email Formatting Validation
+		if(!preg_match("/^([A-Za-z0-9\.\-]{1,64})[@]([A-Za-z0-9\-]{1,188}\.)([A-Za-z\.]{1,9})$/", $_POST["email"])){
+			$errors['email002'] = "Valid email is required";
+		}
+
+       
 
 		//Street Number Validation 
 		if(empty($_POST['sNum'])){//if empty
 			$errors['snum001'] = "Street Number is requred";
 		}
-                
-               /* //valid number from 1 to 999
-                if(preg_match("[0-9]{1,3}", ($_POST['sNum']), $matches)){
-			$errors['snum002'] = "Not a valid street number";
-		}*/
-                
+
 
 		//Street Name Validation 
 		if(empty($_POST['sName'])){//if empty
 			$errors['sname001'] = "Street Name is requred";
 		}
+
+		
                /* 
                 if(preg_match("[A-Za-z\s]{1,25}", ($_POST['sName']), $matches)){//added white spaces
 			$errors['sname002'] = "Street name must be between 1-25 characters and contain only alphabetic characters";
@@ -84,15 +84,30 @@
 			$errors['province001'] = "Province is requred";
 		}
 
+		if(!preg_match("/^(AB|BC|MN|NB|NF|NT|NS|NV|ON|PI|QB|SK|YK|0)$/" ,$_POST['province'])){
+			$errors[] = "Province error";
+		}
+
 		//Postal Code Validation 
 		if(empty($_POST['pCode'])){
 			$errors['pcode001'] = "Postal Code is requred";
+		}
+
+		//Postal Code Check 
+		if(!preg_match("/^[a-zA-Z][0-9][a-zA-Z][\s]?[0-9][a-zA-Z][0-9]$/", $_POST['pCode'])){
+			$errors['pcode002'] = "Enter a valid postal code";
 		}
 
 		//Phone Number Validation 
 		if(empty($_POST['pNum'])){
 			$errors['pnum001'] = "Phone Number is requred";
 		}
+
+		if(!preg_match("/^\(?[0-9]{3}[\.\-\)]?[\s]?[0-9]{3}[\.\-]?[0-9]{4}$/", $_POST['pNum'])){
+			$errors['pnum002'] = "Enter a valid Canadian phone number";
+		}
+
+		
 /*
         //valid phone number 
         if(preg_match("[[\d\()-.]]{10}", ($_POST['pNum']), $matches)){//working on it rn
@@ -275,11 +290,11 @@
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
 		<!-- Username Form --> 
 		<p>
-		<label for="uName">Username: *</label>
+		<label for="uName">Username: </label>
 		<input type="text" name="uName" id="uName" value="<?php if(isset($_POST['uName'])); echo $_POST['uName']?>"/>
 
 		<!-- Username Validation -->
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['uname001'])) echo $errors['uname001'];#empty
 
 			if(isset($errors['uname002'])) echo $errors['uname002'];#A-Za-z 1-25 length
@@ -291,9 +306,9 @@
 		?></span>
 
 		<!-- email Form -->
-		<label for="email"> eMail: *</label>
+		<label for="email"> eMail: </label>
 		<input type="text" name="email" id="email"value="<?php if(isset($_POST['email'])); echo $_POST['email']?>"/>
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['email001'])){
             	echo $errors['email001'];#empty
             }
@@ -306,10 +321,10 @@
 
 		<p> 
 		<!-- Street Number Form --> 
-		<label for="sNum"> Street Number: *</label>
+		<label for="sNum"> Street Number: </label>
 		<input type="text" name="sNum" id="sNum"value="<?php if(isset($_POST['sNum'])); echo $_POST['sNum']?>"/>
 
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['snum001'])) echo $errors['snum001'];#empty
 
 
@@ -318,10 +333,10 @@
 
 
 		<!-- Street Name Form --> 
-		<label for="sName"> Street Name: *</label>
+		<label for="sName"> Street Name: </label>
 		<input type="text" name="sName" id="sName"value="<?php if(isset($_POST['sName'])); echo $_POST['sName']?>"/>
 
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['sname001'])) echo $errors['sname001'];#empty
 
 
@@ -331,9 +346,9 @@
 
 		<p> 
 		<!-- City Form --> 
-		<label for="city"> City: *</label>
+		<label for="city"> City: </label>
 		<input type="text" name="city" id="city"value="<?php if(isset($_POST['city'])); echo $_POST['city']?>"/>
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['city001'])) echo $errors['city001'];#empty
 
 
@@ -360,8 +375,9 @@
 		<option value='SK'>Saskatchewan</option>
 		<option value='YK'>Yukon</option>
 		</select>	
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['province001'])) echo $errors['province001'];#empty
+			if(isset($errors['province002'])) echo $errors['province002'];
 
 
 
@@ -373,11 +389,12 @@
 		<p> 
 		<!-- Postal Code Form --> 
 
-		<label for="pCode"> Postal Code: *</label>
+		<label for="pCode"> Postal Code: </label>
 		<input type="text" name="pCode" id="pCode" value="<?php if(isset($_POST['pCode'])); echo $_POST['pCode']?>">
 
-		<span class="errors"><?php
+		<span class="errors"> * <?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
+			if(isset($errors['pcode002'])) echo $errors['pcode002'];#validation check
 
 
 
@@ -387,11 +404,11 @@
 
 		<!-- Phone Number Form --> 
 
-		<label for="pNum"> Phone Number: *</label>
+		<label for="pNum"> Phone Number: </label>
 		<input type="text" name="pNum" id="pNum"value="<?php if(isset($_POST['pNum'])); echo $_POST['pNum']?>"/>
 
 
-		<span class="errors"><?php
+		<span class="errors">* <?php
 			if(isset($errors['pnum001'])) echo $errors['pnum001'];#empty
 			if(isset($errors['pnum002'])) echo $errors['pnum002'];#Valid
 
