@@ -68,13 +68,12 @@
         } else {
 
             //prepared statement & query string
-            $result = pg_prepare($conn, "INSERT", "INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)");
+            $result = pg_prepare($conn, "INSERT", "INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)");
 
             #input sanitization goes here
-
-            $stmtVal = array("$_POST['uName']", "$_POST['email']", "$_POST['sNum']", "$_POST['sName']", "$_POST['city']",
-                "$_POST['province']", "$_POST['pCode']", "$_POST['pNum']", "$_POST['bio']");
+			echo "$_POST[uname]";
+            $stmtVal = array("$_POST[uName]", "$_POST[email]", "$_POST[sNum]", "$_POST[sName]", "$_POST[city]",
+                "$_POST[province]", "$_POST[pCode]", "$_POST[pNum]", "$_POST[bio]");
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
