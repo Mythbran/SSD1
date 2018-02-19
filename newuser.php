@@ -295,7 +295,7 @@
 		<!-- Postal Code Form --> 
 
 		<label for="pcode"> Postal Code: </label>
-		<input type="text" name="pCode" id="pcode" value="<?php if(isset($_POST['pcode'])); echo $_POST['pcode']?>">
+		<input type="text" name="pcode" id="pcode" value="<?php if(isset($_POST['pcode'])); echo $_POST['pcode']?>">
 
 		<span class="errors"> * <?php
 			if(isset($errors['pcode001'])) echo $errors['pcode001'];#empty
