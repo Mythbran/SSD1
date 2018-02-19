@@ -108,15 +108,19 @@
 		}
 
 		
-/*
-        //valid phone number 
-        if(preg_match("[[\d\()-.]]{10}", ($_POST['pNum']), $matches)){//working on it rn
-                    //only valid ones go thru
-			$errors['pnum002'] = "Not a valid phone number";
-		}*/
+ 		//bio validation
+                $temp = $_POST['bio'];
+                $temp = stripslashes($temp);//going to strip html regardless
+	    	$temp = htmlspecialchars($temp);
+	    	$temp = trim($temp);
+                    
+                if(preg_match("(?i)select|delete|insert", $temp, $matches)){//removes SQL operations
+                   $temp = str_replace($matches, "", $temp);//replaces with null
+		}
+                $_POST['bio'] = $temp;//posts back to bio
                 
 		if(count($errors) == 0){
-			header("Location: /enterUser.php");
+			header("Location: /SSD1/userAdded.php");
 			exit();
 		}
 	
