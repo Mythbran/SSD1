@@ -58,14 +58,15 @@
             </div>
         </nav>
 
-        <h2>The Following Information Was Added To The Database:</h2>
         <?php
         $conn = pg_connect("host=localhost port=5432 dbname=user user=insertUser password=sdMg4%68");
 
         //makes sure connection was successful
         if (!$conn) {
             echo pg_last_error($conn);
+			echo "shit broke";
         } else {
+echo "The Following Information Was Added To The Database"
 
             //prepared statement & query string
             $result = pg_prepare($conn, "INSERT", "INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)");
