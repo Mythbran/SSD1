@@ -69,12 +69,10 @@
 
 
             //prepared statement & query string
-            $result = pg_prepare($conn, "INSERT", "INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)");
+            $result = pg_prepare($conn, "INSERT", 'INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)');
 
             #input sanitization goes here
-			echo "Username: $_POST[uname]";
-            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[snum]", "$_POST[sname]", "$_POST[city]",
-                "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
+            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[sname]", "$_POST[snum]", "$_POST[city]", "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
 
