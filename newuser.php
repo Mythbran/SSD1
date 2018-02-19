@@ -94,7 +94,7 @@
 		}
 
 		//Postal Code Check 
-		if(!preg_match("/^[a-zA-Z][0-9][a-zA-Z][\s]?[0-9][a-zA-Z][0-9]$/", $_POST['pCode'])){
+		if(!preg_match("/^[a-zA-Z][0-9][a-zA-Z][\s]?[0-9][a-zA-Z][0-9]$/", $_POST['pcode'])){
 			$errors['pcode002'] = "Enter a valid postal code";
 		}
 
@@ -103,7 +103,7 @@
 			$errors['pnum001'] = "Phone Number is requred";
 		}
 
-		if(!preg_match("/^\(?[0-9]{3}[\.\-\)]?[\s]?[0-9]{3}[\.\-]?[0-9]{4}$/", $_POST['pNum'])){
+		if(!preg_match("/^\(?[0-9]{3}[\.\-\)]?[\s]?[0-9]{3}[\.\-]?[0-9]{4}$/", $_POST['pnum'])){
 			$errors['pnum002'] = "Enter a valid Canadian phone number";
 		}
 
