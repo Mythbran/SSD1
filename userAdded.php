@@ -1,6 +1,6 @@
 <?php
 #redircts to index after 6 sec, but doesnt work if anything is drawn on screen
-	header("redirect:6;url=index.html");
+	header("redirect:6; url=index.html");
 ?>
 
 <!doctype html>
@@ -59,7 +59,7 @@
         </nav>
 
         <?php
-        $conn = pg_connect("host=localhost port=5432 dbname=SSD1 user=SSD1Admin password=Jlej58$8"); or die ("could not connect");
+        $conn = pg_connect("host=localhost port=5432 dbname=SSD1 user=SSD1Admin password=Jlej58$8") or die("could not connect");
 
         //makes sure connection was successful
         if (!$conn) {
