@@ -208,7 +208,7 @@
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
 	<!-- User Form --> 
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
 		<!-- Username Form --> 
