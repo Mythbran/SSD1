@@ -98,18 +98,7 @@
 						echo"</tr>"; 
 					
 						
-					}                 
-                   /*while ($row = pg_fetch_assoc($result)) {
-                        print "User ID:      " . $row['uid'] . "<br> ";
-                        print "Username:     " . $row['uname'] . " <br>";
-                        print "Email:        " . $row['email'] . "<br> ";
-                        print "Address:      " . $row['snum'] . " " . $row['sname'] . "<br> ";
-                        print "City:         " . $row['city'] . ", " . $row['province'] . " <br>";
-                        print "Postal Code:  " . $row['pcode'] . "<br> ";
-                        print "Phone Number: " . $row['pnum'] . "<br> ";
-                        print "Bio           " . $row['bio'] . "<br>";
-                        print "<br>";
-                    }//while loop */                  
+					}                                  
                     ?>
                     </table>
 
