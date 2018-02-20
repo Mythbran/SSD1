@@ -53,7 +53,7 @@
             </div>
         </nav>
 
-        <div class="container" style="display:none">
+        <div class="container">
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-4">
