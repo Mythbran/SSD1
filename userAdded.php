@@ -76,7 +76,7 @@
         if (!$conn) {	
             echo pg_last_error($conn);
 			
-        } elseif($temp == null){
+        } elseif(true){
 
             $stmtVal = array("$_SESSION[uname]", "$_SESSION[email]", "$_SESSION[sname]", "$_SESSION[snum]", "$_SESSION[city]", "$_SESSION[province]", "$_SESSION[pcode]", "$_SESSION[pnum]", "$_SESSION[bio]");
             //prepared statement & query string
@@ -137,6 +137,7 @@
         }
         }else{
         	echo "asdfj";
+        }
         $temp = "";
         ?>
         </table>
