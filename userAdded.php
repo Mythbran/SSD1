@@ -60,7 +60,7 @@
 
 	<?php
 		session_start();
-        $conn = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!")or die ("shit ");
+        $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!")or die ("shit ");
 
         //makes sure connection was successful
         if (!$conn) {	
