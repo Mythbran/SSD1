@@ -133,9 +133,9 @@
 			unset($_SESSION['bio']);
 			unset($_SESSION['pcode']);
             pg_close($conn);
+        }
         }else{
         	echo "asdfj";
-        }
         
         ?>
         </table>
