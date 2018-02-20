@@ -85,7 +85,7 @@
                 echo pg_last_error($conn);
                 #echo ("shit broke");
             } else {
-		echo "The Following Information Was Added To The Database";
+		echo "<h2> The Following Information Was Added To The Database</h2>";
 		echo "<br>";
 		echo"<tr>";
 		echo "<td> username </td>";
