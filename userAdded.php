@@ -18,7 +18,7 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
-            table, th, td{
+            table, tr, td{
             	border: 1px solid black;
             	width:500px;
             }
@@ -57,7 +57,13 @@
                 </div><!--/.navbar-collapse -->
             </div>
         </nav>
-
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>User List</h2>
+                    <h3>A List of Users is Below</h3>
+ 				<table>  
 <table style="width:300px">
 	<?php
 		session_start();
@@ -117,6 +123,9 @@
         }
         ?>
         </table>
+                            <br>
+                </div>
+                <hr>
         <footer>
             <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a>
             <a class="btn btn-default" href="listUser.php" role="button">User List &raquo;</a></p>
