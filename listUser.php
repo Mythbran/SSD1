@@ -83,7 +83,7 @@
 					
 					
 					                      
-                   while ($row = pg_fetch_assoc($result)) {
+                   /*while ($row = pg_fetch_assoc($result)) {
                         print "User ID:      " . $row['uid'] . "<br> ";
                         print "Username:     " . $row['uname'] . " <br>";
                         print "Email:        " . $row['email'] . "<br> ";
@@ -93,7 +93,7 @@
                         print "Phone Number: " . $row['pnum'] . "<br> ";
                         print "Bio           " . $row['bio'] . "<br>";
                         print "<br>";
-                    }//while loop                   
+                    }//while loop */                  
                     ?>
                     </table>
 
