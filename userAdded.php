@@ -22,9 +22,10 @@
             	border: 1px solid black;
             	width:500px;
             }
-        th, td {
-   			 padding: 15px;
-   			 text-align: left;
+
+		th, td {
+    		padding: 15px;
+    		text-align: left;
 		}
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
