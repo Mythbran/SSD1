@@ -59,13 +59,8 @@
                     <h2>User List</h2>
                     <h3>A List of Users is Below</h3>
 
-                    <?php
-                    //database connection
-                    $db = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdselect password=Wier~723") or die ("connection refused");
-                    $result = pg_query($db, 'SELECT * FROM users');
-
-                    //prints out table and values
-                   echo" <table style="width:100%">
+                    <!--prints out table and values-->
+                    <table style="width:100%">
                         <tr>
                         
                             <th>User ID</th>
@@ -78,7 +73,14 @@
                         <th>Bio</th>
                        
                         </tr>
-                        ";
+                        
+                    <?php
+                    //database connection
+                    $db = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdselect password=Wier~723") or die ("connection refused");
+                    $result = pg_query($db, 'SELECT * FROM users');
+
+                    
+                      
                     while ($row = pg_fetch_assoc($result)) {
                        echo "<tr>";
                         echo "<td>$row['uid']</td>";
