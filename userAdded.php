@@ -69,13 +69,14 @@
 <table style="width:300px">
 	<?php
 		session_start();
+		$temp = $_SESSION['uname'];
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdinsert password=Jxem877&")or die ("Connection Refused");
 
         //makes sure connection was successful
         if (!$conn) {	
             echo pg_last_error($conn);
 			
-        } elseif(!empty($_SESSION['uname'])){
+        } elseif($temp == null){
 
             $stmtVal = array("$_SESSION[uname]", "$_SESSION[email]", "$_SESSION[sname]", "$_SESSION[snum]", "$_SESSION[city]", "$_SESSION[province]", "$_SESSION[pcode]", "$_SESSION[pnum]", "$_SESSION[bio]");
             //prepared statement & query string
@@ -136,7 +137,7 @@
         }
         }else{
         	echo "asdfj";
-        
+        $temp = "";
         ?>
         </table>
 
