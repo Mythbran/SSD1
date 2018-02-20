@@ -54,6 +54,7 @@
             </div>
         </nav>
 
+<table border="1">
 	<?php
 		session_start();
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdinsert password=Jxem877&")or die ("Connection Refused");
@@ -82,6 +83,19 @@
             } else {
 		echo "The Following Information Was Added To The Database";
 		echo "<br>";
+		
+		echo "<td> username </td>";
+		echo "<td> email </td>";
+		echo "<td> house number </td>";
+		echo "<td> Street Name </td>";
+		echo "<td> City </td>";
+		echo "<td> Province </td>";
+		echo "<td> Phone Number </td>";
+		echo "<td> Bio </td>";
+		
+		
+		
+		
                 $inLen = count($stmtVal); //counts length of the input array stmtVal
                 //prints out the info that was just inserted
                 for ($x = 0; $x < $inLen; $x++) {
@@ -93,6 +107,7 @@
             pg_close($conn);
         }
         ?>
+        </table>
         <footer>
             <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a></p>
             <p><a class="btn btn-default" href="listUser.php" role="button">User List &raquo;</a></p>
