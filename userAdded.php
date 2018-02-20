@@ -135,10 +135,9 @@
 			unset($_SESSION['pcode']);
             pg_close($conn);
         }
-        }else{
+        else{
         	echo "asdfj";
         }
-        $temp = "";
         ?>
         </table>
 
