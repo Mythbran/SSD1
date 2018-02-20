@@ -87,7 +87,7 @@
             } else {
 		echo "<h2> The Following Information Was Added To The Database</h2>";
 		echo "<br>";
-		echo"<tr>";
+		echo"<tr><h3>";
 		echo "<td> username </td>";
 		echo "<td> email </td>";
 		echo "<td> house number </td>";
@@ -97,9 +97,9 @@
 		echo "<td> Postal Code </td>";
 		echo "<td> Phone Number </td>";
 		echo "<td> Bio </td>";
-		echo "</tr>";
+		echo "</h3></tr>";
 		
-		echo "<tr>";
+		echo "<tr><h4>";
 		echo "<td>$_SESSION[uname]</td>";
 		echo "<td>$_SESSION[email]</td>";
 		echo "<td>$_SESSION[snum]</td>";
@@ -109,7 +109,7 @@
 		echo "<td>$_SESSION[pcode]</td>";
 		echo "<td>$_SESSION[pnum]</td>";
 		echo "<td>$_SESSION[bio]</td>";
-		echo "</tr>";
+		echo "</h4></tr>";
 		
             }//end of else
 
