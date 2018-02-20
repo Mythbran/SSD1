@@ -85,6 +85,7 @@
                 #echo ("shit broke");
             } else {
 		echo "The Following Information Was Added To The Database";
+		echo "<br>";
                 $inLen = count($stmtVal); //counts length of the input array stmtVal
                 //prints out the info that was just inserted
                 for ($x = 0; $x < $inLen; $x++) {
