@@ -60,7 +60,6 @@
 
 	<?php
 		session_start();
-		$UNAME = $_SESSION['uname'];
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!")or die ("shit ");
 
         //makes sure connection was successful
@@ -69,7 +68,7 @@
 			
         } else {
 
-            $stmtVal = array("$UNAME", "$_SESSION[email]", "$_SESSION[sname]", "$_SESSION[snum]", "$_SESSION[city]", "$_SESSION[province]", "$_SESSION[pcode]", "$_SESSION[pnum]", "$_SESSION[bio]");
+            $stmtVal = array("$_SESSION[uname]", "$_SESSION[email]", "$_SESSION[sname]", "$_SESSION[snum]", "$_SESSION[city]", "$_SESSION[province]", "$_SESSION[pcode]", "$_SESSION[pnum]", "$_SESSION[bio]");
             //prepared statement & query string
             
             
