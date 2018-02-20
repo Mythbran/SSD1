@@ -1,6 +1,6 @@
 <?php
 #redircts to index after 6 sec, but doesnt work if anything is drawn on screen
-	header("redirect:6; url=index.html");
+	header("redirect:1; url=index.html");
 ?>
 
 <!doctype html>
@@ -42,7 +42,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Assignment 1</a>
+          				<a class="navbar-brand" href="/">Home</a>
+          				<a class="navbar-brand" href="/SSD1">SSD1</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" role="form">
