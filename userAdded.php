@@ -88,27 +88,27 @@
 		echo "<h2> The Following Information Was Added To The Database</h2>";
 		echo "<br>";
 		echo"<tr>";
-		echo "<td><h3> username </h3></td>";
-		echo "<td> email </td>";
-		echo "<td> house number </td>";
-		echo "<td> Street Name </td>";
-		echo "<td> City </td>";
-		echo "<td> Province </td>";
-		echo "<td> Postal Code </td>";
-		echo "<td> Phone Number </td>";
-		echo "<td> Bio </td>";
+		echo "<td><h4> username </h4></td>";
+		echo "<td><h4> email </h4></td>";
+		echo "<td><h4> house number </h4></td>";
+		echo "<td><h4> Street Name </h4></td>";
+		echo "<td><h4> City </h4></td>";
+		echo "<td><h4> Province </h4></td>";
+		echo "<td><h4> Postal Code </h4></td>";
+		echo "<td><h4> Phone Number </h4></td>";
+		echo "<td><h4> Bio </h4></td>";
 		echo "</tr>";
 		
 		echo "<tr>";
-		echo "<td>$_SESSION[uname]</td>";
-		echo "<td>$_SESSION[email]</td>";
-		echo "<td>$_SESSION[snum]</td>";
-		echo "<td>$_SESSION[sname]</td>";
-		echo "<td>$_SESSION[city]</td>";
-		echo "<td>$_SESSION[province]</td>";
-		echo "<td>$_SESSION[pcode]</td>";
-		echo "<td>$_SESSION[pnum]</td>";
-		echo "<td>$_SESSION[bio]</td>";
+		echo "<td><h5> $_SESSION[uname]</h5></td>";
+		echo "<td><h5> $_SESSION[email]</h5></td>";
+		echo "<td><h5> $_SESSION[snum]</h5></td>";
+		echo "<td><h5> $_SESSION[sname]</h5></td>";
+		echo "<td><h5> $_SESSION[city]</h5></td>";
+		echo "<td><h5> $_SESSION[province]</h5></td>";
+		echo "<td><h5> $_SESSION[pcode]</h5></td>";
+		echo "<td><h5> $_SESSION[pnum]</h5></td>";
+		echo "<td><h5> $_SESSION[bio]</h5></td>";
 		echo "</tr>";
 		
             }//end of else
