@@ -65,9 +65,9 @@
                     $result = pg_query($db, 'SELECT * FROM users');
 
                     //prints out table and values
-                    <table style="width:100%">
+                   echo" <table style="width:100%">
                         <tr>
-                        echo "
+                        
                             <th>User ID</th>
                         <th>Username</th>
                         <th>Email</th>
@@ -76,11 +76,11 @@
                         <th>Postal Code</th>
                         <th>Phone Number</th>
                         <th>Bio</th>
-                        ";
+                       
                         </tr>
-                        
+                        ";
                     while ($row = pg_fetch_assoc($result)) {
-                        <tr>
+                       echo "<tr>";
                         echo "<td>$row['uid']</td>";
                         echo "<td>$row['uname']</td>";
                         echo "<td>$row['email']</td>";
@@ -89,10 +89,10 @@
                         echo "<td>$row['pcode']</td>";
                         echo "<td>$row['pnum']</td>";
                         echo "<td>$row['bio']</td>";
-                         </tr>
+                         echo "</tr>";
                     }//while loop
                    
-                    </table>
+                    echo "</table>";
                     ?>
 
                     <br>
