@@ -1,5 +1,5 @@
 # SSD1
 
-test shit 
+test TEST
 test
-testshit
+testTEST
