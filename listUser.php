@@ -100,10 +100,11 @@
                     ?>
                     </table>
 
-                    <br>
+                    <br><br><br><br><br><br>
                 </div>
+                
                 <hr>
-				</body>
+				
                 <footer>
                     <p><a class="btn btn-default" href="index.html" role="button">Back &raquo;</a></p>
                     <p>&copy; D'AngeloTrudge 2018</p>
@@ -114,4 +115,4 @@
             <script src="js/vendor/bootstrap.min.js"></script>
 
             <script src="js/main.js"></script>
-</html>
+</body></html>

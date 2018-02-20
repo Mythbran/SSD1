@@ -61,9 +61,6 @@
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-4">
-                    <h2>User List</h2>
-                    <h3>A List of Users is Below</h3>
- 				<table>  
 <table style="width:300px">
 	<?php
 		session_start();
@@ -123,19 +120,19 @@
         }
         ?>
         </table>
-                            <br>
+                    <br><br><br><br><br><br>
                 </div>
+                
                 <hr>
-        <footer>
-            <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a>
-            <a class="btn btn-default" href="listUser.php" role="button">User List &raquo;</a></p>
-            <p>&copy; D'AngeloTrudge 2018</p>
-        </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+				
+                <footer>
+                    <p><a class="btn btn-default" href="index.html" role="button">Back &raquo;</a></p>
+                    <p>&copy; D'AngeloTrudge 2018</p>
+                </footer>
+            </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <script src="js/vendor/bootstrap.min.js"></script>
+            <script src="js/vendor/bootstrap.min.js"></script>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+            <script src="js/main.js"></script>
+</body></html>
