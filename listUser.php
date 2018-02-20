@@ -36,7 +36,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Assignment 1</a>
+						<a class="navbar-brand" href="/">Home</a>
+          				<a class="navbar-brand" href="/SSD1">SSD1</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" role="form">
@@ -58,14 +59,12 @@
                 <div class="col-md-4">
                     <h2>User List</h2>
                     <h3>A List of Users is Below</h3>
-
+                    
                     <?php
                     //database connection
                     $db = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdselect password=Wier~723") or die ("connection refused");
                     $result = pg_query($db, 'SELECT * FROM users');
-
-                    //prints out table and values
-                    //the table was too long for the pg, so i made it into chuncks instead
+                        
                     while ($row = pg_fetch_assoc($result)) {
                         print "User ID:      " . $row['uid'] . "<br> ";
                         print "Username:     " . $row['uname'] . " <br>";
@@ -76,7 +75,7 @@
                         print "Phone Number: " . $row['pnum'] . "<br> ";
                         print "Bio           " . $row['bio'] . "<br>";
                         print "<br>";
-                    }//while loop
+                    }//while loop                   
                     ?>
 
                     <br>
@@ -84,9 +83,10 @@
                 <hr>
 
                 <footer>
-                    <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a></p>
+                    <p><a class="btn btn-default" href="index.html" role="button">Back &raquo;</a></p>
                     <p>&copy; D'AngeloTrudge 2018</p>
                 </footer>
+                <table disabled="true"/>
             </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
