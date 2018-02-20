@@ -66,7 +66,7 @@
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-4">
-<table style="width:300px">
+<table>
 	<?php
 		session_start();
 		$temp = $_SESSION['uname'];
@@ -84,7 +84,6 @@
             
             $result = pg_prepare($conn, "INSERT", 'INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)');
 
-            #input sanitization goes here 
 
 
             $rtn = pg_execute($conn, "INSERT", $stmtVal);
@@ -92,7 +91,6 @@
             //makes sure that the insert executed properly
             if (!$rtn) {
                 echo pg_last_error($conn);
-                #echo ("shit broke");
             } else {
 		echo "<h2> The Following Information Was Added To The Database</h2>";
 		echo "<br>";

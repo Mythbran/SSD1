@@ -79,20 +79,15 @@
 			$errors['sname001'] = "Street Name is requred";
 		}
 
-		
-               /* 
-                if(preg_match("[A-Za-z\s]{1,25}", ($_POST['sName']), $matches)){//added white spaces
-			$errors['sname002'] = "Street name must be between 1-25 characters and contain only alphabetic characters";
-		}*/
 	
 		//City Validation 
 		if(empty($_POST['city'])){
 			$errors['city001'] = "City is requred";
 		}
                 
-                //not too sure bout this. you said u might make a whitelist???
+                
 
-		//Province Validation NOT WORKING MIGHT MAKE A WHITELIST 
+		//Province Validation 
 		if(empty($_POST['province'])){
 			$errors['province001'] = "Province is requred";
 		}
@@ -220,10 +215,7 @@
 		<span class="errors"> * <?php
 			if(isset($errors['uname001'])) echo $errors['uname001'];#empty
 
-			if(isset($errors['uname002'])) echo $errors['uname002'];#A-Za-z 1-25 length
-
-                        #shud strip of slashes & tags
-                        
+			if(isset($errors['uname002'])) echo $errors['uname002'];#A-Za-z 1-25 length      
 
 
 		?></span>
