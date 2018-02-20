@@ -90,6 +90,7 @@
 		echo "<td> Street Name </td>";
 		echo "<td> City </td>";
 		echo "<td> Province </td>";
+		echo "<td> Postal Code </td>";
 		echo "<td> Phone Number </td>";
 		echo "<td> Bio </td>";
 		echo "</tr>";
@@ -102,6 +103,7 @@
 		echo "<td>$_SESSION[sname]</td>";
 		echo "<td>$_SESSION[city]</td>";
 		echo "<td>$_SESSION[province]</td>";
+		echo "<td>$_SESSION[pcode]</td>";
 		echo "<td>$_SESSION[pnum]</td>";
 		echo "<td>$_SESSION[bio]</td>";
 		echo "</tr>";
