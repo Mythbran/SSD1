@@ -70,6 +70,7 @@
                     $result = pg_query($db, 'SELECT * FROM users');
                     
 					echo"<tr>";
+					echo "<td><h4> User ID </h4></td>";
 					echo "<td><h4> username </h4></td>";
 					echo "<td><h4> email </h4></td>";
 					echo "<td><h4> house number </h4></td>";
@@ -82,7 +83,22 @@
 					echo "</tr>";  
 					
 					
-					                      
+					while ($row = ph_fetch_assoc($resilts)){
+						echo"tr";
+						echo "<td><h5> $row['uid']</h5></td>";
+						echo "<td><h5> $row['uname']</h5></td>";
+						echo "<td><h5> $row['email']</h5></td>";
+						echo "<td><h5> $row['snum']</h5></td>";
+						echo "<td><h5> $row['sname']</h5></td>";
+						echo "<td><h5> $row['city']</h5></td>";
+						echo "<td><h5> $row['province']</h5></td>";
+						echo "<td><h5> $row['pcode']</h5></td>";
+						echo "<td><h5> $row['pnum']</h5></td>";
+						echo "<td><h5> $row['bio']</h5></td>";
+						echo"/tr";
+					
+						
+					}                 
                    /*while ($row = pg_fetch_assoc($result)) {
                         print "User ID:      " . $row['uid'] . "<br> ";
                         print "Username:     " . $row['uname'] . " <br>";
