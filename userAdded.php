@@ -58,7 +58,7 @@
             </div>
         </nav>
 
-<table style="width:500">
+<table style="width:300px">
 	<?php
 		session_start();
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdinsert password=Jxem877&")or die ("Connection Refused");
