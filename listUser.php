@@ -59,13 +59,27 @@
                 <div class="col-md-4">
                     <h2>User List</h2>
                     <h3>A List of Users is Below</h3>
-                    
-                    <?php
+ 				<table>                   
+                <?php
                     //database connection
                     $db = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdselect password=Wier~723") or die ("connection refused");
                     $result = pg_query($db, 'SELECT * FROM users');
-                        
-                    while ($row = pg_fetch_assoc($result)) {
+                    
+					echo"<tr>";
+					echo "<td><h4> username </h4></td>";
+					echo "<td><h4> email </h4></td>";
+					echo "<td><h4> house number </h4></td>";
+					echo "<td><h4> Street Name </h4></td>";
+					echo "<td><h4> City </h4></td>";
+					echo "<td><h4> Province </h4></td>";
+					echo "<td><h4> Postal Code </h4></td>";
+					echo "<td><h4> Phone Number </h4></td>";
+					echo "<td><h4> Bio </h4></td>";
+					echo "</tr>";  
+					
+					
+					                      
+                   while ($row = pg_fetch_assoc($result)) {
                         print "User ID:      " . $row['uid'] . "<br> ";
                         print "Username:     " . $row['uname'] . " <br>";
                         print "Email:        " . $row['email'] . "<br> ";
@@ -77,6 +91,7 @@
                         print "<br>";
                     }//while loop                   
                     ?>
+                    </table>
 
                     <br>
                 </div>
