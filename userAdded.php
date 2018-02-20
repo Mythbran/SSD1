@@ -54,7 +54,7 @@
             </div>
         </nav>
 
-<table border="1">
+<table border="1" width="100">
 	<?php
 		session_start();
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdinsert password=Jxem877&")or die ("Connection Refused");
@@ -107,14 +107,6 @@
 		echo "<td>$_SESSION[bio]</td>";
 		echo "</tr>";
 		
-		
-		
-                $inLen = count($stmtVal); //counts length of the input array stmtVal
-                //prints out the info that was just inserted
-                for ($x = 0; $x < $inLen; $x++) {
-                    echo $stmtVal[$x];
-                    echo "<br>";
-                }
             }//end of else
 
             pg_close($conn);
