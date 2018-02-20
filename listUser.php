@@ -83,7 +83,7 @@
 					echo "</tr>";  
 					
 					
-					while ($row = ph_fetch_assoc($result)){
+					while ($row = pg_fetch_assoc($result)){
 						echo"<tr>";
 						//echo "<td><h5> . $row[uid] .     </h5></td>";
 						echo "<td><h5>" . $row['uname'] . "</h5></td>";
