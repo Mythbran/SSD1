@@ -103,7 +103,7 @@
                     <br>
                 </div>
                 <hr>
-
+				</body>
                 <footer>
                     <p><a class="btn btn-default" href="index.html" role="button">Back &raquo;</a></p>
                     <p>&copy; D'AngeloTrudge 2018</p>
