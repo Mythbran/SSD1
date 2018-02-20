@@ -58,7 +58,8 @@
             </div>
         </nav>
 
-        <?php
+	<?php
+		session_start();
         $conn = pg_connect("host=localhost port=5432 dbname=ssd1 user=ssd1admin password=Passw0rd123!")or die ("shit ");
 
         //makes sure connection was successful
@@ -67,8 +68,9 @@
 			
         } else {
 
-            $stmtVal = array("$_POST[uname]", "$_POST[email]", "$_POST[sname]", "$_POST[snum]", "$_POST[city]", "$_POST[province]", "$_POST[pcode]", "$_POST[pnum]", "$_POST[bio]");
+            $stmtVal = array('$_SESSION[uname]', '$_SESSION[email]', '$_SESSION[sname]', '$_SESSION[snum]', '$_SESSION[city]', '$_SESSION[province]', '$_SESSION[pcode]', '$_SESSION[pnum]', '$_SESSION[bio]');
             //prepared statement & query string
+            
             
             $result = pg_prepare($conn, "INSERT", 'INSERT INTO users (uname, email, sname, snum, city, province, pcode, pnum, bio) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)');
 

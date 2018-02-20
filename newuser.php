@@ -24,8 +24,21 @@
  * Strip any # and -- character sequence      * 
  * Pass should request and store info 	      *  
  * ****************************************** -->
+
 <?php 
+	
 	if($_POST){
+	
+		session_start();
+		$_SESSION['uname'] = $_POST['uname'];
+		$_SESSION['email'] = $_POST['email'];
+		$_SESSION['snum'] = $_POST['snum'];
+		$_SESSION['sname'] = $_POST['sname'];
+		$_SESSION['city'] = $_POST['city'];
+		$_SESSION['province'] = $_POST['province'];
+		$_SESSION['bio'] = $_POST['bio'];
+		$_SESSION['pcode'] = $_POST['pcode'];
+		$_SESSION['pnum'] = $_POST['pnum'];
 		//Validation things 
 
 
@@ -125,6 +138,7 @@
                 
 		if(count($errors) == 0){
 			header("Location: /SSD1/userAdded.php");
+			
 			exit();
 		}
 	
@@ -192,7 +206,7 @@
     </div>
 
 	<!-- User Form --> 
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
+	<form method="post" action="" id="uform">
 		<!-- Username Form --> 
 		<p>
 		<label for="uname">Username: </label>
