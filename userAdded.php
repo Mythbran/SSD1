@@ -118,8 +118,8 @@
         ?>
         </table>
         <footer>
-            <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a></p>
-            <p><a class="btn btn-default" href="listUser.php" role="button">User List &raquo;</a></p>
+            <p><a class="btn btn-default" href="index.html" role="button">Index &raquo;</a>
+            <a class="btn btn-default" href="listUser.php" role="button">User List &raquo;</a></p>
             <p>&copy; D'AngeloTrudge 2018</p>
         </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
