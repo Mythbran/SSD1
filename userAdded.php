@@ -136,7 +136,7 @@
         ?>
         </table>
 
-      <p><a class="btn btn-default" href="/SSD" role="button">Home &raquo;</a></p>
+      <p><a class="btn btn-default" href="/SSD1" role="button">Home &raquo;</a></p>
       <hr>
 
       <footer>
