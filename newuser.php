@@ -208,7 +208,7 @@
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
 	<!-- User Form --> 
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
 		<!-- Username Form --> 
@@ -227,7 +227,9 @@
 
 
 		?></span>
+		</p> 
 
+		<p> 
 		<!-- email Form -->
 		<label for="email"> Email: </label>
 		<input type="text" name="email" id="email"value="<?php if(isset($_POST['email'])); echo $_POST['email']?>"/>
@@ -253,7 +255,9 @@
 
 
 		?></span>
+		</p> 
 
+		<p> 
 
 		<!-- Street Name Form --> 
 		<label for="sname"> Street Name: </label>
@@ -277,7 +281,9 @@
 
 
 		?></span>
+		</p> 
 
+		<p> 
 
 		<!-- Province Form -->
 
@@ -323,7 +329,9 @@
 
 		?></span>
 
+		</p> 
 
+		<p> 
 
 		<!-- Phone Number Form --> 
 
