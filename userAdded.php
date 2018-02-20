@@ -136,7 +136,8 @@
             pg_close($conn);
         }
         else{
-        	echo "asdfj";
+        	echo "Please enter information before accessing this page.";
+      		echo "<p><a class="btn btn-default" href="/enteruser.php" role="button">Enter User &raquo;</a></p>  "     	
         }
         ?>
         </table>
