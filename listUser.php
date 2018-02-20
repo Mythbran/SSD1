@@ -76,9 +76,9 @@
                         <th>Phone Number</th>
                         <th>Bio</th>
                         </tr>
-                        <tr>
-                    while ($row = pg_fetch_assoc($result)) {
                         
+                    while ($row = pg_fetch_assoc($result)) {
+                        <tr>
                         print "<td>$row['uid']</td>";
                         print "<td>$row['uname']</td>";
                         print "<td>$row['email']</td>";
@@ -87,9 +87,9 @@
                         print "<td>$row['pcode']</td>";
                         print "<td>$row['pnum']</td>";
                         print "<td>$row['bio']</td>";
-                        
+                         </tr>
                     }//while loop
-                    </tr>
+                   
                     </table>
                     ?>
 
