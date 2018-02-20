@@ -53,7 +53,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container" style="display:none">
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-4">
@@ -86,7 +86,6 @@
                     <p><a class="btn btn-default" href="index.html" role="button">Back &raquo;</a></p>
                     <p>&copy; D'AngeloTrudge 2018</p>
                 </footer>
-                <table disabled="true"/>
             </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
