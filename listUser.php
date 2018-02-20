@@ -67,6 +67,7 @@
                     //prints out table and values
                     <table style="width:100%">
                         <tr>
+                        echo "
                             <th>User ID</th>
                         <th>Username</th>
                         <th>Email</th>
@@ -75,18 +76,19 @@
                         <th>Postal Code</th>
                         <th>Phone Number</th>
                         <th>Bio</th>
+                        ";
                         </tr>
                         
                     while ($row = pg_fetch_assoc($result)) {
                         <tr>
-                        print "<td>$row['uid']</td>";
-                        print "<td>$row['uname']</td>";
-                        print "<td>$row['email']</td>";
-                        print "<td>$row['snum'] . " " . $row['sname']</td>";
-                        print "<td>$row['city'] . ", " . $row['province']</td>";
-                        print "<td>$row['pcode']</td>";
-                        print "<td>$row['pnum']</td>";
-                        print "<td>$row['bio']</td>";
+                        echo "<td>$row['uid']</td>";
+                        echo "<td>$row['uname']</td>";
+                        echo "<td>$row['email']</td>";
+                        echo "<td>$row['snum'] . " " . $row['sname']</td>";
+                        echo "<td>$row['city'] . ", " . $row['province']</td>";
+                        echo "<td>$row['pcode']</td>";
+                        echo "<td>$row['pnum']</td>";
+                        echo "<td>$row['bio']</td>";
                          </tr>
                     }//while loop
                    
