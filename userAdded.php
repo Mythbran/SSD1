@@ -22,6 +22,10 @@
             	border: 1px solid black;
             	width:500px;
             }
+        th, td {
+   			 padding: 15px;
+   			 text-align: left;
+		}
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -91,15 +95,15 @@
 		echo "<h2> The Following Information Was Added To The Database</h2>";
 		echo "<br>";
 		echo"<tr>";
-		echo "<td><h4> username </h4></td>";
-		echo "<td><h4> email </h4></td>";
-		echo "<td><h4> house number </h4></td>";
-		echo "<td><h4> Street Name </h4></td>";
-		echo "<td><h4> City </h4></td>";
-		echo "<td><h4> Province </h4></td>";
-		echo "<td><h4> Postal Code </h4></td>";
-		echo "<td><h4> Phone Number </h4></td>";
-		echo "<td><h4> Bio </h4></td>";
+		echo "<th><h4> username </h4></th>";
+		echo "<th><h4> email </h4></th>";
+		echo "<th><h4> house number </h4></th>";
+		echo "<th><h4> Street Name </h4></th>";
+		echo "<th><h4> City </h4></th>";
+		echo "<th><h4> Province </h4></th>";
+		echo "<th><h4> Postal Code </h4></th>";
+		echo "<th><h4> Phone Number </h4></th>";
+		echo "<th><h4> Bio </h4></th>";
 		echo "</tr>";
 		
 		echo "<tr>";
@@ -114,14 +118,24 @@
 		echo "<td><h5> $_SESSION[bio]</h5></td>";
 		echo "</tr>";
 		
+		
+		
             }//end of else
 
+			unset($_SESSION['uname']);
+			unset($_SESSION['email']);
+			unset($_SESSION['snum']);
+			unset($_SESSION['sname']);
+			unset($_SESSION['city']);
+			unset($_SESSION['province']);
+			unset($_SESSION['bio']);
+			unset($_SESSION['pcode']);
             pg_close($conn);
         }
         ?>
         </table>
 
-
+      <p><a class="btn btn-default" href="/SSD" role="button">Home &raquo;</a></p>
       <hr>
 
       <footer>
