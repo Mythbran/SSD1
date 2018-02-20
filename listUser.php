@@ -78,16 +78,16 @@
                         </tr>
                         <tr>
                     while ($row = pg_fetch_assoc($result)) {
-                        <td>
-                        print $row['uid'];
-                        print $row['uname'];
-                        print $row['email'];
-                        print $row['snum'] . " " . $row['sname']
-                        print $row['city'] . ", " . $row['province'];
-                        print $row['pcode'];
-                        print $row['pnum'];
-                        print $row['bio'];
-                        </td>
+                        
+                        print "<td>$row['uid']</td>";
+                        print "<td>$row['uname']</td>";
+                        print "<td>$row['email']</td>";
+                        print "<td>$row['snum'] . " " . $row['sname']</td>";
+                        print "<td>$row['city'] . ", " . $row['province']</td>";
+                        print "<td>$row['pcode']</td>";
+                        print "<td>$row['pnum']</td>";
+                        print "<td>$row['bio']</td>";
+                        
                     }//while loop
                     </tr>
                     </table>
