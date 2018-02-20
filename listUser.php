@@ -65,18 +65,32 @@
                     $result = pg_query($db, 'SELECT * FROM users');
 
                     //prints out table and values
-                    //the table was too long for the pg, so i made it into chuncks instead
+                    <table style="width:100%">
+                        <tr>
+                            <th>User ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Postal Code</th>
+                        <th>Phone Number</th>
+                        <th>Bio</th>
+                        </tr>
+                        <tr>
                     while ($row = pg_fetch_assoc($result)) {
-                        print "User ID:      " . $row['uid'] . "<br> ";
-                        print "Username:     " . $row['uname'] . " <br>";
-                        print "Email:        " . $row['email'] . "<br> ";
-                        print "Address:      " . $row['snum'] . " " . $row['sname'] . "<br> ";
-                        print "City:         " . $row['city'] . ", " . $row['province'] . " <br>";
-                        print "Postal Code:  " . $row['pcode'] . "<br> ";
-                        print "Phone Number: " . $row['pnum'] . "<br> ";
-                        print "Bio           " . $row['bio'] . "<br>";
-                        print "<br>";
+                        <td>
+                        print $row['uid'];
+                        print $row['uname'];
+                        print $row['email'];
+                        print $row['snum'] . " " . $row['sname']
+                        print $row['city'] . ", " . $row['province'];
+                        print $row['pcode'];
+                        print $row['pnum'];
+                        print $row['bio'];
+                        </td>
                     }//while loop
+                    </tr>
+                    </table>
                     ?>
 
                     <br>
