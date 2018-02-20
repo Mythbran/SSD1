@@ -53,8 +53,6 @@
 			$errors['uname002'] = "Only letters are allowed. Max 25 characters";
 		}
 
-		//STILL NEEDS REMOVAL OF WHITESPACE - SANITATION 
-
 
 		//email validation
 		if(empty($_POST['email'])){
@@ -84,10 +82,9 @@
 		if(empty($_POST['city'])){
 			$errors['city001'] = "City is requred";
 		}
-                
-                
+                           
+		//Province Validation
 
-		//Province Validation 
 		if(empty($_POST['province'])){
 			$errors['province001'] = "Province is requred";
 		}
