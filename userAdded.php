@@ -136,7 +136,7 @@
             pg_close($conn);
         }
         else{
-        	echo "<p>Please enter information before accessing this page.</p>"; 
+        	echo "<p><h2>Error: Please enter information before accessing this page.</h2></p>"; 
         	echo "<p><a class='btn btn-default' href='/SSD1/newuser.php' role'button'> New User &raquo; </a></p>";   	
         }
         ?>
