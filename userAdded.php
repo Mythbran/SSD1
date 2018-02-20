@@ -18,6 +18,10 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            table, th, td{
+            	border: 1px solid black;
+            	width:500px;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -54,7 +58,7 @@
             </div>
         </nav>
 
-<table border="1" width="500">
+<table>
 	<?php
 		session_start();
         $conn = pg_connect("host=127.0.0.1 port=5432 dbname=ssd1 user=ssdinsert password=Jxem877&")or die ("Connection Refused");
