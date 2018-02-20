@@ -74,9 +74,9 @@
                     $result = pg_query($db, 'SELECT * FROM users');
                     
 					echo"<tr>";
-					echo "<td><h4> username       </h4></td>";
-					echo "<td><h4> email          </h4></td>";
-					echo "<td><h4> house number   </h4></td>";
+					echo "<td><h4> Username       </h4></td>";
+					echo "<td><h4> Email          </h4></td>";
+					echo "<td><h4> House Number   </h4></td>";
 					echo "<td><h4> Street Name    </h4></td>";
 					echo "<td><h4> City           </h4></td>";
 					echo "<td><h4> Province       </h4></td>";
