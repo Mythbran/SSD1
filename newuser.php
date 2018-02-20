@@ -206,7 +206,7 @@
     </div>
 
 	<!-- User Form --> 
-	<form method="post" action="" id="uform">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="uform">
 		<!-- Username Form --> 
 		<p>
 		<label for="uname">Username: </label>
@@ -343,9 +343,12 @@
 		</p>
 
 		
-		<input type="submit" value="submit"/>
-		<input type="reset" value="reset"/>
+		<input class="btn btn-default" type="submit" value="Submit &raquo;"/>
+		<input class="btn btn-default" type="reset" value="Reset &raquo;"/>
+		<a class="btn btn-default" href="/SSD1" role="button">Back &raquo;</a>
 	</form>
+	
+	
 
 
 
