@@ -70,7 +70,6 @@
                     $result = pg_query($db, 'SELECT * FROM users');
                     
 					echo"<tr>";
-					echo "<td><h4> User ID        </h4></td>";
 					echo "<td><h4> username       </h4></td>";
 					echo "<td><h4> email          </h4></td>";
 					echo "<td><h4> house number   </h4></td>";
@@ -85,7 +84,6 @@
 					
 					while ($row = pg_fetch_assoc($result)){
 						echo"<tr>";
-						echo "<td><h5>" . $row['uid'] .      "</h5></td>";
 						echo "<td><h5>" . $row['uname'] .    "</h5></td>";
 						echo "<td><h5>" . $row['email'] .    "</h5></td>";
 						echo "<td><h5>" . $row['snum']  .    "</h5></td>";
