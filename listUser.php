@@ -17,6 +17,10 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            table, td, tr{
+            	border: 1px solid black;
+            	width:500px;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
