@@ -95,15 +95,15 @@
 		echo "</tr>";
 		
 		echo "<tr>";
-		echo "<td>"$_SESSION[uname]"</td>";
-		echo "<td>"$_SESSION[email]"</td>";
-		echo "<td>"$_SESSION[uname]"</td>";
-		echo "<td>"$_SESSION[snum]"</td>";
-		echo "<td>"$_SESSION[sname]"</td>";
-		echo "<td>"$_SESSION[city]"</td>";
-		echo "<td>"$_SESSION[province]"</td>";
-		echo "<td>"$_SESSION[pnum]"</td>";
-		echo "<td>"$_SESSION[bio]"</td>";
+		echo "<td>$_SESSION[uname]</td>";
+		echo "<td>$_SESSION[email]</td>";
+		echo "<td>$_SESSION[uname]</td>";
+		echo "<td>$_SESSION[snum]</td>";
+		echo "<td>$_SESSION[sname]</td>";
+		echo "<td>$_SESSION[city]</td>";
+		echo "<td>$_SESSION[province]</td>";
+		echo "<td>$_SESSION[pnum]</td>";
+		echo "<td>$_SESSION[bio]</td>";
 		echo "</tr>";
 		
 		
