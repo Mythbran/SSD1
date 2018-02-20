@@ -83,7 +83,7 @@
             } else {
 		echo "The Following Information Was Added To The Database";
 		echo "<br>";
-		
+		echo"<tr>";
 		echo "<td> username </td>";
 		echo "<td> email </td>";
 		echo "<td> house number </td>";
@@ -92,7 +92,19 @@
 		echo "<td> Province </td>";
 		echo "<td> Phone Number </td>";
 		echo "<td> Bio </td>";
+		echo "</tr>";
 		
+		echo "<tr>";
+		echo "<td>"$_SESSION[uname]"</td>";
+		echo "<td>"$_SESSION[email]"</td>";
+		echo "<td>"$_SESSION[uname]"</td>";
+		echo "<td>"$_SESSION[snum]"</td>";
+		echo "<td>"$_SESSION[sname]"</td>";
+		echo "<td>"$_SESSION[city]"</td>";
+		echo "<td>"$_SESSION[province]"</td>";
+		echo "<td>"$_SESSION[pnum]"</td>";
+		echo "<td>"$_SESSION[bio]"</td>";
+		echo "</tr>";
 		
 		
 		
