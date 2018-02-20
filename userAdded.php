@@ -129,6 +129,7 @@
 			unset($_SESSION['sname']);
 			unset($_SESSION['city']);
 			unset($_SESSION['province']);
+			unset($_SESSION['pnum']);
 			unset($_SESSION['bio']);
 			unset($_SESSION['pcode']);
             pg_close($conn);
